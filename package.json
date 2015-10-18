@@ -1,0 +1,33 @@
+{
+  "name": "gug-cz_web-frontend",
+  "version": "1.0.0",
+  "description": "Frontend for new GUG.cz web",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "gulp server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gugcz/web-frontend.git"
+  },
+  "keywords": [
+    "gug.cz",
+    "web",
+    "frontend"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gugcz/web-frontend/issues"
+  },
+  "homepage": "https://github.com/gugcz/web-frontend#readme",
+  "dependencies": {
+    "express": "^4.13.3"
+  },
+  "devDependencies": {
+    "bower": "^1.6.3",
+    "connect-livereload": "^0.5.3",
+    "gulp": "^3.9.0",
+    "gulp-express": "^0.3.5"
+  }
+}
