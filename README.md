@@ -13,3 +13,27 @@ pro vývoj pak
 ```
 npm start
 ```
+
+### Deploy
+
+#### Setup
+
+Nainstalujte [Google Cloud SDK](https://cloud.google.com/sdk/#Quick_Start)
+
+Nalogujte se do vašeho Google účtu (musíte mít přístup k webu)
+
+```
+gcloud auth login
+```
+
+Nainstalujte nutné komponenty:
+
+```
+gcloud components update app
+```
+
+#### Deploy
+
+```
+gcloud preview app deploy app.yaml --promote
+```
