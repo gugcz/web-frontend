@@ -14,7 +14,7 @@ gulp.task('server', ['styles:scss'], function () {
   gulp.watch(['app/public/css/**/*.css'], server.notify);
   gulp.watch(['app/scripts/**/*.js'], ['jshint']);
   gulp.watch(['app/images/**/*'], server.notify);
-  gulp.watch(['app/app.js', 'routes/**/*.js'], [server.run]);
+  gulp.watch(['app/app.js', 'app/controllers/**/*.js', 'app/models/**/*.js', 'app/helpers/**/*.js', 'app/middlewares/**/*.js'], [server.run]);
 });
 
 gulp.task('styles:scss', function () {
