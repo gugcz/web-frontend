@@ -1,3 +1,12 @@
 language: node_js
 node_js:
-- '4.2.1'
+- 4.2.1
+deploy:
+  provider: gae
+  keyfile: gug-web-frontend-ecfab098b81a.json.enc
+  default: true
+  project: gug-web-frontend
+before_install:
+- openssl aes-256-cbc -K $encrypted_8f111d0c0b63_key -iv $encrypted_8f111d0c0b63_iv
+  -in gug-web-frontend-ecfab098b81a.json.enc -out gug-web-frontend-ecfab098b81a.json
+  -d
