@@ -32,6 +32,12 @@ Nainstalujte nutné komponenty:
 gcloud components update app
 ```
 
+Nastavte projekt
+
+```
+gcloud config set project gug-web-frontend
+```
+
 #### Deploy
 
 ```
