@@ -2,10 +2,12 @@
   "name": "gug-cz_web-frontend",
   "version": "1.0.0",
   "description": "Frontend for new GUG.cz web",
-  "main": "src/app.js",
+  "main": "app/app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 0",
-    "start": "gulp server"
+    "start": "node app/app.js",
+    "devel": "gulp server",
+    "deploy": "gcloud config set project gug-web-frontend && gcloud preview app deploy app.yaml --set-default",
+    "test": "echo \"Error: no test specified\" && exit 0"
   },
   "repository": {
     "type": "git",

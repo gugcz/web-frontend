@@ -9,7 +9,12 @@ naklonujte si repozitář a v root složce projektu spusťte
 npm install
 ```
 
-pro vývoj pak
+pro vývoj použijte příkaz, projekt bude dostupný na adrese localhost:8080
+```
+npm run devel
+```
+
+pro spuštění bez watcherů a livereloadu stačí
 ```
 npm start
 ```
@@ -32,14 +37,22 @@ Nainstalujte nutné komponenty:
 gcloud components update app
 ```
 
-Nastavte projekt
+Spusťte deploy
+```
+npm run deploy
+```
+
+_příkaz provede nastavení projektu a deploy, tedy nahrazuje následující dva příkazy:_
+
+Nastavení projektu
 
 ```
 gcloud config set project gug-web-frontend
 ```
-
-#### Deploy
+Deploy
 
 ```
 gcloud preview app deploy app.yaml --promote
 ```
+
+
