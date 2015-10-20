@@ -7,12 +7,10 @@ app.set('views', [__dirname + '/views/']);
 
 app.use('/node_modules', express.static(__dirname + '/../node_modules'));
 app.use('/public', express.static(__dirname + '/public'));
-app.use(require('./controllers'));
 
-// Debug
-app.use(function(request) {
-  console.log(request.url)
-});
+app.use('/events', require('./controllers/events'));
+app.use('/', require('./controllers/index'));
+
 
 if (process.env.NODE_ENV !== 'production') {
   app.use(require('connect-livereload')({
