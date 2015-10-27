@@ -1,3 +1,6 @@
+[![Dependency Status](https://david-dm.org/gugcz/web-frontend.png)](https://david-dm.org/gugcz/web-frontend) 
+[![devDependency Status](https://david-dm.org/gugcz/web-frontend/dev-status.png)](https://david-dm.org/gugcz/web-frontend#info=devDependencies)
+
 # web-frontend
 Frontend for new GUG.cz web
 
