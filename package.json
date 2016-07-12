@@ -6,8 +6,11 @@
   "scripts": {
     "start": "node app/app.js",
     "devel": "gulp server",
-    "deploy": "gcloud config set project gug-web-frontend && gcloud preview app deploy app.yaml --set-default",
+    "deploy": "gcloud app deploy --project gug-web-frontend-1370",
     "test": "echo \"Error: no test specified\" && exit 0"
+  },
+  "engines": {
+    "node": "~4.2"
   },
   "repository": {
     "type": "git",
@@ -24,16 +27,16 @@
   },
   "homepage": "https://github.com/gugcz/web-frontend#readme",
   "dependencies": {
-    "express": "^4.13.3",
+    "express": "^4.14.0",
     "jade": "^1.11.0",
-    "jquery": "^2.1.4",
-    "materialize-css": "^0.97.1"
+    "jquery": "^3.1.0",
+    "materialize-css": "^0.97.6"
   },
   "devDependencies": {
-    "connect-livereload": "^0.5.3",
-    "gulp": "^3.9.0",
+    "connect-livereload": "^0.5.4",
+    "gulp": "^3.9.1",
     "gulp-express": "^0.3.5",
-    "gulp-load-plugins": "^1.0.0",
-    "gulp-sass": "^2.0.4"
+    "gulp-load-plugins": "^1.2.4",
+    "gulp-sass": "^2.3.2"
   }
 }
