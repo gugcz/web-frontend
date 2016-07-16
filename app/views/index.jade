@@ -1,25 +1,4 @@
-doctype html
-html
-  title
-  head
-    // Import Google Icon Font
-    link(href='http://fonts.googleapis.com/icon?family=Material+Icons', rel='stylesheet')
-    // Import materialize.css
-    link(type='text/css', rel='stylesheet', href='/public/css/styles.css', media='screen,projection')
-    // Let browser know website is optimized for mobile
-    meta(name='viewport', content='width=device-width, initial-scale=1.0')
-    title My Site - #{title}
-  body
-.navbar-fixed
-  nav
-    .nav-wrapper
-      a.brand-logo(href='#!') Google User Group
-
-      ul.right.hide-on-med-and-down
-        li
-          a(href='sass.html') Chapters
-        li
-          a(href='badges.html') Events
+include ./head.jade
 
 .container
   .row
@@ -27,10 +6,10 @@ html
       .card
         .card-image
           img(src='http://materializecss.com/images/sample-1.jpg')
-          span.card-title Event o Google Apps
+          span.card-title GUG HowtoPraha
         .card-content
           p
-            | Jsem jednoduchý popis eventu o skvělé technologii pro vaše podnikání.
+            | Jsem jednoduchý popis eventu o pravidelné nachytřovací akci pro GUGery.
             | Pořádaný skvělými GUGery z české republiky
         .card-action
           a(href='#') Chci vědět víc
@@ -38,10 +17,10 @@ html
       .card
         .card-image
           img(src='http://materializecss.com/images/sample-1.jpg')
-          span.card-title Event o Firebase
+          span.card-title GUG HackatonTobis place
         .card-content
           p
-            | Jsem jednoduchý popis eventu o skvělé technologii pro vaše appky a webky.
+            | Jsem jednoduchý popis eventu o prvním hackatonu, kde jsme začali vyvíjet tento web.
             | Pořádaný skvělými GUGery z české republiky
         .card-action
           a(href='#') Chci vědět víc
@@ -49,37 +28,12 @@ html
       .card
         .card-image
           img(src='http://materializecss.com/images/sample-1.jpg')
-          span.card-title Appky ve školách
+          span.card-title DevFestOstrava
         .card-content
           p
-            | Jsem jednoduchý popis eventu o appkách do vašich škol pro vaše učitele.
+            | Jsem jednoduchý popis eventu o devfestu v Ostravě. #devfestpyčo
             | Pořádaný skvělými GUGery z české republiky
         .card-action
           a(href='#') Chci vědět víc
 
-footer.page-footer
-  .container
-    .row
-      .col.l6.s12
-        h5.white-text GUG Bio
-        p.grey-text.text-lighten-4 GUG.cz je společenství skupin lidí se zájmem o Google technologie, nezávislé na Google. Pořádáme setkávání, přednášky, workshopy a další akce. V našich skupinách se potkávají vývojáři, lidé z firem, geeci a uživatelé, a učitelé.
-        
-      .col.l4.offset-l2.s12
-        h5.white-text Links
-        ul
-          li
-            a.grey-text.text-lighten-3(href='#!') GBG
-          li
-            a.grey-text.text-lighten-3(href='#!') GDG
-          li
-            a.grey-text.text-lighten-3(href='#!') GEG
-          li
-            a.grey-text.text-lighten-3(href='#!') GXG
-  .footer-copyright
-    .container
-      | © 2014 Copyright 
-      a.grey-text.text-lighten-4.right(href='#!') With love made by GUGers
-
-    script(type='text/javascript', src='/node_modules/jquery/dist/jquery.js')
-    script(type='text/javascript', src='/node_modules/materialize-css/dist/js/materialize.js')
-    script(type='text/javascript', src='http://localhost:35729/livereload.js?snipver=1')
+include ./foot.jade

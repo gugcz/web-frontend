@@ -1,10 +1,10 @@
-html
-  head
-    title GUG Events
-  body
-    h1 Events
-    ul#events
-      each event in events
+include ./../head.jade
+
+h1 Events
+ul#events
+    each event in events
         li
-          =event.name
-          span=event.venue
+            =event.name
+            span=event.venue
+
+include ./../foot.jade
