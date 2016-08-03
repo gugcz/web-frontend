@@ -1,5 +1,8 @@
 runtime: nodejs
 vm: true
+automatic_scaling:
+  min_num_instances: 1
+  max_num_instances: 1
 
 env_variables:
   NODE_ENV: production
