@@ -4,6 +4,7 @@
   "description": "Frontend for new GUG.cz web",
   "main": "app/app.js",
   "scripts": {
+    "postinstall": "gulp build",
     "start": "node app/app.js",
     "devel": "gulp server",
     "deploy": "gcloud app deploy --project gug-web-frontend-1370 --version devel",

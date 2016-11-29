@@ -22,3 +22,6 @@ gulp.task('styles:scss', function () {
       .pipe(plugins.sass().on('error', plugins.sass.logError))
       .pipe(gulp.dest('app/public/css'));
 });
+
+
+gulp.task('build', ['styles:scss']);
