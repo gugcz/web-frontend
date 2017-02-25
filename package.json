@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node app/app.js",
     "devel": "gulp server",
-    "deploy": "gcloud app deploy --project gug-web-frontend-1370 --version devel",
+    "deploy": "gcloud app deploy --project gug-web-public --version 1",
     "test": "echo \"Error: no test specified\" && exit 0"
   },
   "engines": {
