@@ -22,5 +22,10 @@ gulp.task('styles:scss', function () {
       .pipe(gulp.dest('public/css'));
 });
 
+gulp.task('copyimages', function() {
+    gulp.src('./app/images/**/*')
+    .pipe(gulp.dest('./public/images'));
+});
 
-gulp.task('build', ['styles:scss']);
+
+gulp.task('build', ['styles:scss', 'copyimages']);
