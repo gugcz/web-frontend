@@ -2,11 +2,11 @@
 var express = require('express');
 var app = express();
 
-app.set('view engine', 'jade');
+app.set('view engine', 'pug');
 app.set('views', [__dirname + '/views/']);
 
 app.use('/node_modules', express.static(__dirname + '/../node_modules'));
-app.use('/public', express.static(__dirname + '/public'));
+app.use('/public', express.static(__dirname + '/../public'));
 
 app.use('/events', require('./controllers/events'));
 app.use('/', require('./controllers/index'));
