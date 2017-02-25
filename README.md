@@ -2,7 +2,7 @@
 [![devDependency Status](https://david-dm.org/gugcz/web-frontend/dev-status.png)](https://david-dm.org/gugcz/web-frontend#info=devDependencies)
 
 # web-frontend
-Frontend for new GUG.cz web - http://gug-web-frontend-1370.appspot.com/
+Frontend for new GUG.cz web - https://gug-web-public.appspot.com/
 
 ### Instalace ###
 

@@ -1,5 +1,6 @@
 .idea/
 node_modules/
 public/
+.DS_Store
 
 gug-web-frontend-ecfab098b81a.json
