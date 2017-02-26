@@ -1,11 +1,49 @@
 @import "./../../node_modules/materialize-css/sass/materialize.scss";
 
 body {
-  display: flex;
-  min-height: 100vh;
-  flex-direction: column;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
 }
 
 main {
-  flex: 1 0 auto;
+    flex: 1 0 auto;
+}
+
+.datetime {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.follow li {
+    float: left;
+}
+
+.custom-icon {
+    background-image: url('../images/sprites-icons.png');
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    display: block;
+}
+
+.custom-icon- {
+    &follow {
+        width: 38px;
+        height: 38px;
+    }
+
+    &facebook {
+        background-color: #3b5999;
+        background-position: -91px -182px;
+    }
+
+    &srazy {
+        background-color: #3e3e3e;
+        background-position: -223px -182px;
+    }
+
+    &website {
+        background-color: #d9b800;
+        background-position: -398px -182px;
+    }
 }
