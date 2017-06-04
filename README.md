@@ -1,23 +1,27 @@
-[![Dependency Status](https://david-dm.org/gugcz/web-frontend.png)](https://david-dm.org/gugcz/web-frontend) 
-[![devDependency Status](https://david-dm.org/gugcz/web-frontend/dev-status.png)](https://david-dm.org/gugcz/web-frontend#info=devDependencies)
-
 # web-frontend
-Frontend for new GUG.cz web - https://gug-web-public.appspot.com/
+Frontend nového webu je hostovaný na Google Cloudu a běží na tomto [linku](https://gug-web-public.appspot.com/).
 
 ### Instalace ###
 
-naklonujte si repozitář a v root složce projektu spusťte
+Pokud se chcete zapojit do vývoje naklonujte si repozitář, spuštěním příkazu ve složce projektu.
+
+```
+git clone https://github.com/gugcz/web-frontend.git
+```
+Potom v root složce projektu spusťte
 
 ```
 npm install
 ```
 
-pro vývoj použijte příkaz, projekt bude dostupný na adrese localhost:8080
+a pro vývoj použijte příkaz
 ```
 npm run devel
 ```
+Když vše projde, projekt bude dostupný na adrese [localhost:8080](http://localhost:8080)
 
-pro spuštění bez watcherů a livereloadu stačí
+
+Pro spuštění bez watcherů a livereloadu stačí
 ```
 npm start
 ```
@@ -26,7 +30,7 @@ npm start
 
 #### Setup
 
-Nainstalujte [Google Cloud SDK](https://cloud.google.com/sdk/#Quick_Start)
+Nainstalujte si [Google Cloud SDK](https://cloud.google.com/sdk/#Quick_Start)
 
 Nalogujte se do vašeho Google účtu (musíte mít přístup k webu)
 
@@ -57,5 +61,3 @@ Deploy
 ```
 gcloud preview app deploy app.yaml --promote
 ```
-
-
