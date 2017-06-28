@@ -1,6 +1,7 @@
 .idea/
 node_modules/
 public/
-.DS_Store
+.DS_Storegit add .gitignore
+.web-frontend.iml
 
 gug-web-frontend-ecfab098b81a.json

@@ -1,3 +1,5 @@
+// Page which is used by visitors to join community
+
 module.exports = function (req, res) {
 
     res.render('event/index', {

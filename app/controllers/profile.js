@@ -1,3 +1,5 @@
+// Page used to show informations about orgs
+
 module.exports = function (req, res) {
 
     res.render('event/index', {

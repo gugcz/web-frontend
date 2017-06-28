@@ -1,3 +1,5 @@
+// Page used to show detail of single event
+
 module.exports = function (req, res) {
 
     res.render('event/index', {
