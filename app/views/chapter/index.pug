@@ -1,40 +1,40 @@
 include ../head
 
 .container
-    .row
-        .section
-            .col.s12.m8
-                .card.grey.lighten-5
-                    .card-content
-                        h1.h3= name
+  .row
+    .section
+      .col.s12.m8
+        .card.grey.lighten-5
+          .card-content
+            h1.h3= name
 
-                        p= description
-                        br
-                        p= description
-                        p
-                            a.right.waves-effect.waves-light.btn-large(href="") Chci přijít
-            .col.s12.m4
-                .card
-                    .card-content
-                        img.responsive-img(src=imgLink,alt=imgAlt)
+            p= description
+            br
+            p= description
+            p
+              a.right.waves-effect.waves-light.btn-large(href="") Chci přijít
+      .col.s12.m4
+        .card
+          .card-content
+            img.responsive-img(src=imgLink,alt=imgAlt)
 
-                        .datetime.red.lighten-1.white-text
-                            p.center= date
-                            
-                            p.center= time
+            .datetime.red.lighten-1.white-text
+              p.center= date
 
-                        p.center
-                            ul.follow.center-align
-                                li
-                                    a.custom-icon.custom-icon-follow.custom-icon-facebook(href=linkFacebook)
-                                li
-                                    a.custom-icon.custom-icon-follow.custom-icon-srazy(href=linkSrazy)
-                                li
-                                    a.custom-icon.custom-icon-follow.custom-icon-website(href=linkWebsite)
+              p.center= time
 
-                            .clearfix
-                        p.section
-                            | Pořádá: 
-                            a(href=chapterLink) #{chapterName}
+            p.center
+              ul.follow.center-align
+                li
+                  a.custom-icon.custom-icon-follow.custom-icon-facebook(href=linkFacebook)
+                li
+                  a.custom-icon.custom-icon-follow.custom-icon-srazy(href=linkSrazy)
+                li
+                  a.custom-icon.custom-icon-follow.custom-icon-website(href=linkWebsite)
+
+              .clearfix
+            p.section
+              | Pořádá: 
+              a(href=chapterLink) #{chapterName}
 
 include ../foot

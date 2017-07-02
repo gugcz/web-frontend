@@ -1,49 +1,92 @@
-@import "./../../node_modules/materialize-css/sass/materialize.scss";
+// functions for making colors
+@import './../../node_modules/materialize-css/sass/components/color';
 
-body {
+// custom variables to override default materialize variables like colors etc.
+@import './components/variables';
+
+@import './../../node_modules/materialize-css/sass/materialize.scss';
+
+html
+{
+    height: 100%;
+
+    color: rgba(0,0,0,.87);
+}
+body
+{
     display: flex;
-    min-height: 100vh;
     flex-direction: column;
+
+    height: 100%;
+    min-height: 100vh;
 }
 
-main {
+main
+{
     flex: 1 0 auto;
 }
 
-.datetime {
+.datetime
+{
     font-size: 18px;
     font-weight: bold;
 }
 
-.follow li {
+.follow li
+{
     float: left;
 }
 
-.custom-icon {
+.custom-icon
+{
+    display: block;
+
     background-image: url('../images/sprites-icons.png');
     background-repeat: no-repeat;
     background-position: 0 0;
-    display: block;
 }
 
-.custom-icon- {
-    &follow {
+.custom-icon-
+{
+    &follow
+    {
         width: 38px;
         height: 38px;
     }
 
-    &facebook {
+    &facebook
+    {
         background-color: #3b5999;
         background-position: -91px -182px;
     }
 
-    &srazy {
+    &srazy
+    {
         background-color: #3e3e3e;
         background-position: -223px -182px;
     }
 
-    &website {
+    &website
+    {
         background-color: #d9b800;
         background-position: -398px -182px;
     }
+}
+
+.svg
+{
+    width: 100%;
+}
+
+.map-container
+{
+    height: 50vh;
+}
+
+.map-frame
+{
+    position: relative;
+
+    width: 100%;
+    height: 100%;
 }

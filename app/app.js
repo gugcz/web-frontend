@@ -8,6 +8,7 @@ app.set('views', [__dirname + '/views/']);
 app.use('/node_modules', express.static(__dirname + '/../node_modules'));
 app.use('/public', express.static(__dirname + '/../public'));
 
+app.use('/chapter', require('./controllers/chapter'));
 app.use('/event', require('./controllers/event'));
 app.use('/events', require('./controllers/events'));
 app.use('/', require('./controllers/index'));

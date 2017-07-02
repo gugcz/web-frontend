@@ -1,40 +1,53 @@
 include head
 
 main
-  .container
-    .row
-      .col.s12.m4
-        .card
-          .card-image
-            img(src='http://materializecss.com/images/sample-1.jpg')
-            span.card-title Čtvrtkon
-          .card-content
-            p
-              | Jsem jednoduchý popis eventu o pravidelné nachytřovací akci pro GUGery.
-              | Pořádaný skvělými GUGery z české republiky
-          .card-action
-            a(href='/event') Chci vědět víc
-      .col.s12.m4
-        .card
-          .card-image
-            img(src='http://materializecss.com/images/sample-1.jpg')
-            span.card-title GUG HackatonTobis place
-          .card-content
-            p
-              | Jsem jednoduchý popis eventu o prvním hackatonu, kde jsme začali vyvíjet tento web.
-              | Pořádaný skvělými GUGery z české republiky
-          .card-action
-            a(href='#') Chci vědět víc
-      .col.s12.m4
-        .card
-          .card-image
-            img(src='http://materializecss.com/images/sample-1.jpg')
-            span.card-title DevFestPlzeň
-          .card-content
-            p
-              | Jsem jednoduchý popis eventu o devfestu v Plzni. #devfest
-              | Pořádaný skvělými GUGery z české republiky
-          .card-action
-            a(href='#') Chci vědět víc
+  .parallax-container
+    .parallax
+      img(src='/public/images/parallax-1.jpg')
+  .section
+    .row.container
+      .col.s12.center-align
+        h1.header
+          | Co je to GUG?
+      .col.s12.left-align
+        p.flow-text
+          | GUG.cz je společenství skupin lidí se zájmem o Google technologie, nezávislé na Google. Pořádáme setkávání, přednášky, workshopy a další akce. V našich skupinách se potkávají vývojáři, lidé z firem, geeci a uživatelé, a učitelé.
+  .section.map-container
+    .map-frame
+      iframe(src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d1329523.3595726762!2d15.5901342!3d49.3951879!3m2!1i1024!2i768!4f13.1!5e0!3m2!1scs!2scz!4v1499013621281", width="100%", height="100%", frameborder="0", scrolling="no", style="border:0", allowfullscreen)
+  .section
+    .row.container
+      .col.s4.center-align
+        picture
+          source(type='image/svg+xml', srcset='/public/images/logo-gug.svg')
+          img.svg(src='/public/images/logo-gug.png', alt='Logo GUG.cz')
+      .col.s8
+        p.flow-text
+          | GDG je společenství skupin lidí se zájmem o Google technologie, nezávislé na Google. Pořádáme setkávání, přednášky, workshopy a další akce. V našich skupinách se potkávají vývojáři, lidé z firem, geeci a uživatelé, a učitelé.
+    .row.container
+      .col.s8
+        p.flow-text
+          | GBG je společenství skupin lidí se zájmem o Google technologie, nezávislé na Google. Pořádáme setkávání, přednášky, workshopy a další akce. V našich skupinách se potkávají vývojáři, lidé z firem, geeci a uživatelé, a učitelé.          
+      .col.s4
+        picture
+          source(type='image/svg+xml', srcset='/public/images/logo-gug.svg')
+          img.svg(src='/public/images/logo-gug.png', alt='Logo GUG.cz')
+    .row.container
+      .col.s4.center-align
+        picture
+          source(type='image/svg+xml', srcset='/public/images/logo-gug.svg')
+          img.svg(src='/public/images/logo-gug.png', alt='Logo GUG.cz')
+      .col.s8
+        p.flow-text
+          | GEG je společenství skupin lidí se zájmem o Google technologie, nezávislé na Google. Pořádáme setkávání, přednášky, workshopy a další akce. V našich skupinách se potkávají vývojáři, lidé z firem, geeci a uživatelé, a učitelé.
+    .row.container
+      .col.s8
+        p.flow-text
+          | GBG je společenství skupin lidí se zájmem o Google technologie, nezávislé na Google. Pořádáme setkávání, přednášky, workshopy a další akce. V našich skupinách se potkávají vývojáři, lidé z firem, geeci a uživatelé, a učitelé.          
+      .col.s4
+        picture
+          source(type='image/svg+xml', srcset='/public/images/logo-gug.svg')
+          img.svg(src='/public/images/logo-gug.png', alt='Logo GUG.cz')
+
 
 include foot
