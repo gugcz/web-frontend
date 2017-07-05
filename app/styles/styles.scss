@@ -1,92 +1,77 @@
 // functions for making colors
 @import './../../node_modules/materialize-css/sass/components/color';
-
 // custom variables to override default materialize variables like colors etc.
 @import './components/variables';
-
 @import './../../node_modules/materialize-css/sass/materialize.scss';
 
-html
-{
-    height: 100%;
+html {
+  height: 100%;
 
-    color: rgba(0,0,0,.87);
-}
-body
-{
-    display: flex;
-    flex-direction: column;
-
-    height: 100%;
-    min-height: 100vh;
+  color: rgba(0, 0, 0, .87);
 }
 
-main
-{
-    flex: 1 0 auto;
+body {
+  display: flex;
+  flex-direction: column;
+
+  height: 100%;
+  min-height: 100vh;
 }
 
-.datetime
-{
-    font-size: 18px;
-    font-weight: bold;
+.main {
+  flex: 1 0 auto;
 }
 
-.follow li
-{
-    float: left;
+.datetime {
+  font-size: 18px;
+  font-weight: bold;
 }
 
-.custom-icon
-{
-    display: block;
-
-    background-image: url('../images/sprites-icons.png');
-    background-repeat: no-repeat;
-    background-position: 0 0;
+.follow li {
+  float: left;
 }
 
-.custom-icon-
-{
-    &follow
-    {
-        width: 38px;
-        height: 38px;
-    }
+.custom-icon {
+  display: block;
 
-    &facebook
-    {
-        background-color: #3b5999;
-        background-position: -91px -182px;
-    }
-
-    &srazy
-    {
-        background-color: #3e3e3e;
-        background-position: -223px -182px;
-    }
-
-    &website
-    {
-        background-color: #d9b800;
-        background-position: -398px -182px;
-    }
+  background-image: url('../images/sprites-icons.png');
+  background-repeat: no-repeat;
+  background-position: 0 0;
 }
 
-.svg
-{
-    width: 100%;
+.custom-icon- {
+  &follow {
+    width: 38px;
+    height: 38px;
+  }
+
+  &facebook {
+    background-color: #3b5999;
+    background-position: -91px -182px;
+  }
+
+  &srazy {
+    background-color: #3e3e3e;
+    background-position: -223px -182px;
+  }
+
+  &website {
+    background-color: #d9b800;
+    background-position: -398px -182px;
+  }
 }
 
-.map-container
-{
-    height: 50vh;
+.svg {
+  width: 100%;
 }
 
-.map-frame
-{
-    position: relative;
+.map-container {
+  height: 50vh;
+}
 
-    width: 100%;
-    height: 100%;
+.map-frame {
+  position: relative;
+
+  width: 100%;
+  height: 100%;
 }
