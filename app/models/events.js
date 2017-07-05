@@ -1,5 +1,5 @@
 // Get a particular event
-exports.get = function(id, cb) {
+exports.get = function (id, cb) {
   e = {
     id: 1,
     name: 'GUG Howto',
@@ -9,8 +9,8 @@ exports.get = function(id, cb) {
   cb(e)
 }
 
-// Get all events 
-exports.all = function(cb) {
+// Get all events
+exports.all = function (cb) {
   e = [
     {
       id: 1,
