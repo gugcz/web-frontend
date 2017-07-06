@@ -2,6 +2,7 @@
 Frontend nového webu je hostovaný na Google Cloudu a běží na tomto [linku](https://gug-web-public.appspot.com/).
 
 ### Instalace ###
+Nejprve je potřeba nainstalovat si nodejs [podle návodu](https://nodejs.org/en/download/package-manager/).
 
 Pokud se chcete zapojit do vývoje naklonujte si repozitář, spuštěním příkazu ve složce projektu.
 
@@ -16,14 +17,14 @@ npm install
 
 a pro vývoj použijte příkaz
 ```
-npm run devel
+npm run watch
 ```
-Když vše projde, projekt bude dostupný na adrese [localhost:8080](http://localhost:8080)
+Když vše projde, projekt bude dostupný na adrese [localhost:3001](http://localhost:3001)
 
 
-Pro spuštění bez watcherů a livereloadu stačí
+Pro spuštění bez watcherů a browser-sync stačí
 ```
-npm start
+npm start:prod
 ```
 
 ### Deploy
