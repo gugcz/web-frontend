@@ -19,8 +19,9 @@
     "predevel": "npm install",
     "start": "npm run start:dev",
     "start:dev": "NODE_ENV=development nodemon app/app.js --watch 'app/' --ignore 'app/assets'",
-    "start:prod": "NODE_ENV=production node app/app.js",
-    "watch": "npm-run-all --parallel watch:* start:dev",
+    "start:prod": "npm run build && NODE_ENV=production node app/app.js",
+    "watch": "npm run build && npm-run-all --parallel watch:* start:dev",
+    "build": "npm-run-all build:*",
     "deploy": "gcloud app deploy --project gug-web-public --version 1"
   },
   "engines": {
