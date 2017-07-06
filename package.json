@@ -8,10 +8,11 @@
     "predevel": "npm install",
     "devel": "gulp server",
     "deploy": "gcloud app deploy --project gug-web-public --version 1",
-    "test": "echo \"Error: no test specified\" && exit 0"
+    "test": "echo \"Error: no test specified\" && exit 0",
+    "rebuild-sass": "npm rebuild node-sass --force"
   },
   "engines": {
-    "node": "~6.9"
+    "node": "8"
   },
   "repository": {
     "type": "git",
@@ -31,6 +32,7 @@
     "express": "^4.15.3",
     "jquery": "^3.2.1",
     "materialize-css": "^0.99.0",
+    "node-fetch": "^1.7.1",
     "pug": "^2.0.0-rc.2"
   },
   "devDependencies": {

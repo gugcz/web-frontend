@@ -1,5 +1,10 @@
-// Init application
 const express = require('express');
+const asyncErrorChecking = require('./_asyncHelpers').asyncErrorChecking;
+
+const indexController = require('./controllers/index');
+const errorsController = require('./controllers/errors');
+const sectionController = require('./controllers/section');
+
 const app = express();
 
 if (process.env.NODE_ENV !== 'production') {
@@ -9,6 +14,7 @@ if (process.env.NODE_ENV !== 'production') {
 
   app.use('/public/images', express.static(__dirname + '/images'));
   app.use('/public/scripts', express.static(__dirname + '/scripts'));
+  app.use('/public/fonts', express.static(__dirname + '../node_modules/materialize-css/dist/fonts/'));
 }
 
 app.set('view engine', 'pug');
@@ -20,8 +26,11 @@ app.use('/public', express.static(__dirname + '/../public'));
 app.use('/chapter', require('./controllers/chapter'));
 app.use('/event', require('./controllers/event'));
 app.use('/events', require('./controllers/events'));
-app.use('/', require('./controllers/index'));
 
+app.use('/section/:sectionName', asyncErrorChecking(sectionController));
+app.use('/', asyncErrorChecking(indexController));
+
+app.use(errorsController);
 
 const server = app.listen(process.env.PORT || 8080, function () {
   const host = server.address().address;

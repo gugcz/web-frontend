@@ -34,14 +34,19 @@ gulp.task('styles:scss', function () {
     .pipe(gulp.dest('public/css'));
 });
 
-gulp.task('copyscripts', function () {
+gulp.task('copy-scripts', function () {
   gulp.src('./app/scripts/**/*')
     .pipe(gulp.dest('./public/scripts'));
 });
 
-gulp.task('copyimages', function () {
+gulp.task('copy-images', function () {
   gulp.src('./app/images/**/*')
     .pipe(gulp.dest('./public/images'));
 });
 
-gulp.task('build', ['styles:scss', 'copyimages', 'copyscripts']);
+gulp.task('copy-fonts', function () {
+  gulp.src('./node_modules/materialize-css/dist/fonts/**/*')
+    .pipe(gulp.dest('./public/fonts'));
+});
+
+gulp.task('build', ['styles:scss', 'copy-images', 'copy-scripts', 'copy-fonts']);

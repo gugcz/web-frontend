@@ -19,12 +19,14 @@ block content
     .section
       .row.container
         .col.s4.center-align
-          picture
-            source(type='image/svg+xml', srcset='/public/images/logo-gug.svg')
-            img.svg(src='/public/images/logo-gug.png', alt='Logo GUG.cz')
+          a(href='/section/' + sections.gdg.seoName)
+            picture(title=sections.gdg.name)
+              source(type='image/svg+xml', srcset=sections.gdg.images.logo)
+              img.svg(src=sections.gdg.images.logo, alt='Logo GUG.cz')
         .col.s8
           p.flow-text
-            | GDG je společenství skupin lidí se zájmem o Google technologie, nezávislé na Google. Pořádáme setkávání, přednášky, workshopy a další akce. V našich skupinách se potkávají vývojáři, lidé z firem, geeci a uživatelé, a učitelé.
+            | GDG je společenství skupin lidí se zájmem o Google technologie, nezávislé na Google. Pořádáme setkávání, přednášky, workshopy a další akce. V našich skupinách se potkávají vývojáři, lidé z firem, geeci a uživatelé, a učitelé.&nbsp;
+            a(href='/section/' + sections.gdg.seoName) více o GDG
       .row.container
         .col.s8
           p.flow-text
