@@ -16,14 +16,15 @@
     "images:logos-png": "cp -R app/assets/images/logos/*.png public/images/logos/",
     "build:images": "npm run images:logos-svg && npm run images:logos-png",
     "watch:images": "onchange 'app/assets/images/**/*' -- npm run build:images",
+    "predevel": "npm install",
     "start": "npm run start:dev",
-    "start:dev": "env=development nodemon app/app.js --watch 'app/controllers'",
-    "start:prod": "node app/app.js",
+    "start:dev": "NODE_ENV=development nodemon app/app.js --watch 'app/' --ignore 'app/assets'",
+    "start:prod": "NODE_ENV=production node app/app.js",
     "watch": "npm-run-all --parallel watch:* start:dev",
     "deploy": "gcloud app deploy --project gug-web-public --version 1"
   },
   "engines": {
-    "node": "~4.2"
+    "node": "8"
   },
   "repository": {
     "type": "git",
@@ -42,10 +43,10 @@
   "dependencies": {
     "@fancyapps/fancybox": "^3.1.20",
     "express": "^4.15.3",
-    "ipaddr.js": "^1.4.0",
     "jquery": "^3.1.0",
     "materialize-css": "^0.99.0",
-    "pug": "^2.0.0-rc.2"
+    "pug": "^2.0.0-rc.2",
+    "node-fetch": "^1.7.1"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.1",

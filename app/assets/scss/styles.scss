@@ -20,56 +20,29 @@ body
     min-height: 100vh;
 }
 
-main
+.main
 {
     flex: 1 0 auto;
 }
 
-.datetime
+.parallax-caption
 {
-    font-size: 18px;
-    font-weight: bold;
+    position: absolute;
+    top: 50%;
+    left: 0;
+
+    width: 100%;
+
+    text-align: center;
+
+    color: #000;
 }
 
-.follow li
+.parallax-headline
 {
-    //float: left;
-}
+    font-size: 3rem;
 
-.custom-icon
-{
-    display: block;
-
-    background-image: url('../images/sprites-icons.png');
-    background-repeat: no-repeat;
-    background-position: 0 0;
-}
-
-.custom-icon-
-{
-    &follow
-    {
-        width: 38px;
-        height: 38px;
-    }
-
-    &facebook
-    {
-        background-color: #3b5999;
-        background-position: -91px -182px;
-    }
-
-    &srazy
-    {
-        background-color: #3e3e3e;
-        background-position: -223px -182px;
-    }
-
-    &website
-    {
-        background-color: #d9b800;
-        background-position: -398px -182px;
-    }
+    color: #fff;
 }
 
 .svg

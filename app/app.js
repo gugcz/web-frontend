@@ -1,7 +1,18 @@
-// Init application
-// Express Framework
-var express = require('express');
-var app = express();
+const express = require('express');
+const asyncErrorChecking = require('./_asyncHelpers').asyncErrorChecking;
+
+const indexController = require('./controllers/index');
+const errorsController = require('./controllers/errors');
+const sectionController = require('./controllers/section');
+
+const app = express();
+
+if (process.env.NODE_ENV !== 'production') {
+
+  app.use('/public/images', express.static(__dirname + '/images'));
+  app.use('/public/scripts', express.static(__dirname + '/scripts'));
+  app.use('/public/fonts', express.static(__dirname + '../node_modules/materialize-css/dist/fonts/'));
+}
 
 app.set('view engine', 'pug');
 app.set('views', [__dirname + '/views/']);
@@ -12,12 +23,13 @@ app.use('/public', express.static(__dirname + '/../public'));
 app.use('/chapter', require('./controllers/chapter'));
 app.use('/event', require('./controllers/event'));
 app.use('/events', require('./controllers/events'));
-app.use('/', require('./controllers/index'));
 
+app.use('/section/:sectionName', asyncErrorChecking(sectionController));
+app.use('/', asyncErrorChecking(indexController));
 
 // Enable browserSync in development mode
 
-function listening() {
+function listening(port) {
   var browserSync = require('browser-sync');
   var config = {
     files: ["public/**/*.{js,css}", "app/views/**/*.pug"],
@@ -35,13 +47,15 @@ function listening() {
 
 }
 
-var port = process.env.PORT || 3000;
+const server = app.listen(process.env.PORT || 3000, function() {
+  console.log(process.env.NODE_ENV);
+  const host = server.address().address;
+  const port = server.address().port;
 
-var server = app.listen(port, function() {
-  if (app.get('env') === 'development') {
-    listening();
+  if (process.env.NODE_ENV === 'development') {
+    listening(port);
   }
-  var host = server.address().address;
+
 
   console.log('GUG.cz web listening at http://%s:%s', host, port)
 });

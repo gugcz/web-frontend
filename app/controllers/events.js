@@ -10,4 +10,5 @@ module.exports = function(req, res) {
       events: events
     })
   });
+
 };

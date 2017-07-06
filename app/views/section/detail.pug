@@ -1,0 +1,12 @@
+extends ../layout.pug
+
+block content
+  .main
+    .section
+      .row.container
+        .col.s12.center-align
+          h1.header= section.shortcut + ' - ' + section.name
+
+
+    .col.s12
+      pre=JSON.stringify(section)

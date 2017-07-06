@@ -1,10 +1,9 @@
-include ../head
+extends ../layout
 
-h1 Events
-ul#events
+block content
+  h1 Events
+  ul#events
     each event in events
-        li
-            =event.name
-            span=event.venue
-
-include ../foot
+      li
+        =event.name
+        span=event.venue

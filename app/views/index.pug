@@ -1,53 +1,66 @@
-include head
+extends layout.pug
 
-main
-  .parallax-container
-    .parallax
-      img(src='/public/images/parallax-1.jpg')
-  .section
-    .row.container
-      .col.s12.center-align
-        h1.header
-          | Co je to GUG?
-      .col.s12.left-align
-        p.flow-text
-          | GUG.cz je společenství skupin lidí se zájmem o Google technologie, nezávislé na Google. Pořádáme setkávání, přednášky, workshopy a další akce. V našich skupinách se potkávají vývojáři, lidé z firem, geeci a uživatelé, a učitelé.
-  .section.map-container
-    .map-frame
-      iframe(src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d1329523.3595726762!2d15.5901342!3d49.3951879!3m2!1i1024!2i768!4f13.1!5e0!3m2!1scs!2scz!4v1499013621281", width="100%", height="100%", frameborder="0", scrolling="no", style="border:0", allowfullscreen)
-  .section
-    .row.container.valign-wrapper
-      .col.s4.center-align
-        picture
-          source(type='image/svg+xml', srcset='/public/images/logos/logo-gdg.svg')
-          img.responsive-img.valign.svg(src='/public/images/logos/logo-gdg.png', alt='Logo GDG.cz')
-      .col.s8
-        p.flow-text
-          | GDG je společenství skupin lidí se zájmem o Google technologie, nezávislé na Google. Pořádáme setkávání, přednášky, workshopy a další akce. V našich skupinách se potkávají vývojáři, lidé z firem, geeci a uživatelé, a učitelé.
-    .row.container.valign-wrapper
-      .col.s8
-        p.flow-text
-          | GBG je společenství skupin lidí se zájmem o Google technologie, nezávislé na Google. Pořádáme setkávání, přednášky, workshopy a další akce. V našich skupinách se potkávají vývojáři, lidé z firem, geeci a uživatelé, a učitelé.          
-      .col.s4
-        picture
-          source(type='image/svg+xml', srcset='/public/images/logos/logo-gbg.svg')
-          img.svg(src='/public/images/logos/logo-gbg.png', alt='Logo GBG.cz')
-    .row.container.valign-wrapper
-      .col.s4.center-align
-        picture
-          source(type='image/svg+xml', srcset='/public/images/logos/logo-geg.svg')
-          img.svg(src='/public/images/logos/logo-geg.png', alt='Logo GEG.cz')
-      .col.s8
-        p.flow-text
-          | GEG je společenství skupin lidí se zájmem o Google technologie, nezávislé na Google. Pořádáme setkávání, přednášky, workshopy a další akce. V našich skupinách se potkávají vývojáři, lidé z firem, geeci a uživatelé, a učitelé.
-    .row.container.valign-wrapper
-      .col.s8
-        p.flow-text
-          | GXG je společenství skupin lidí se zájmem o Google technologie, nezávislé na Google. Pořádáme setkávání, přednášky, workshopy a další akce. V našich skupinách se potkávají vývojáři, lidé z firem, geeci a uživatelé, a učitelé.          
-      .col.s4
-        picture
-          source(type='image/svg+xml', srcset='/public/images/logos/logo-gxg.svg')
-          img.svg(src='/public/images/logos/logo-gxg.png', alt='Logo GXG.cz')
-
-
-include foot
+block content
+  main
+    .parallax-container
+      .parallax-caption
+        a.waves-effect.waves-light.btn(href='/')
+          | Chci se přidat
+      .parallax
+        img(src='/public/images/parallax-1.jpg')
+    .section
+      .row.container
+        .col.s12.center-align
+          h1.header
+            | Co je to GUG?
+        .col.s12.left-align
+          p.flow-text
+            | GUG.cz je společenství skupin lidí se zájmem o Google technologie, nezávislé na Google. Pořádáme setkávání, přednášky, workshopy a další akce. V našich skupinách se potkávají vývojáři, lidé z firem, geeci a uživatelé, a učitelé.
+    .section.map-container
+      .map-frame
+        iframe(src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d1329523.3595726762!2d15.5901342!3d49.3951879!3m2!1i1024!2i768!4f13.1!5e0!3m2!1scs!2scz!4v1499013621281", width="100%", height="100%", frameborder="0", scrolling="no", style="border:0", allowfullscreen)
+    .section
+      .row.container.valign-wrapper
+        .col.s4.center-align
+          a(href='/section/' + sections.gdg.seoName)
+            picture(title=sections.gdg.name)
+              source(type='image/svg+xml', srcset='/public/images/logos/logo-gdg.svg')
+              img.responsive-img(src='/public/images/logos/logo-gdg.png', alt='Logo GDG.cz')
+        .col.s8
+          p.flow-text
+            | GDG je společenství skupin lidí se zájmem o Google technologie, nezávislé na Google. Pořádáme setkávání, přednášky, workshopy a další akce. V našich skupinách se potkávají vývojáři, lidé z firem, geeci a uživatelé, a učitelé.
+          a.waves-effect.waves-light.btn(href='/section/' + sections.gdg.seoName)
+            | více o GDG
+      .row.container.valign-wrapper
+        .col.s8
+          p.flow-text
+            | GBG je společenství skupin lidí se zájmem o Google technologie, nezávislé na Google. Pořádáme setkávání, přednášky, workshopy a další akce. V našich skupinách se potkávají vývojáři, lidé z firem, geeci a uživatelé, a učitelé.          
+          a.waves-effect.waves-light.btn(href='/section/' + sections.gbg.seoName)
+            | více o GBG
+        .col.s4
+          a(href='/section/' + sections.gbg.seoName)
+            picture
+              source(type='image/svg+xml', srcset='/public/images/logos/logo-gbg.svg')
+              img.responsive-img(src='/public/images/logos/logo-gbg.png', alt='Logo GBG.cz')
+      .row.container.valign-wrapper
+        .col.s4.center-align
+          a(href='/section/' + sections.geg.seoName)
+            picture
+              source(type='image/svg+xml', srcset='/public/images/logos/logo-geg.svg')
+              img.responsive-img(src='/public/images/logos/logo-geg.png', alt='Logo GEG.cz')
+        .col.s8
+          p.flow-text
+            | GEG je společenství skupin lidí se zájmem o Google technologie, nezávislé na Google. Pořádáme setkávání, přednášky, workshopy a další akce. V našich skupinách se potkávají vývojáři, lidé z firem, geeci a uživatelé, a učitelé.
+          a.waves-effect.waves-light.btn(href='/section/' + sections.gbg.seoName)
+            | více o GEG
+      .row.container.valign-wrapper
+        .col.s8
+          p.flow-text
+            | GXG je společenství skupin lidí se zájmem o Google technologie, nezávislé na Google. Pořádáme setkávání, přednášky, workshopy a další akce. V našich skupinách se potkávají vývojáři, lidé z firem, geeci a uživatelé, a učitelé.          
+          a.waves-effect.waves-light.btn(href='/section/' + sections.gxg.seoName)
+            | více o GXG
+        .col.s4
+          a(href='/section/' + sections.gxg.seoName)
+            picture
+              source(type='image/svg+xml', srcset='/public/images/logos/logo-gxg.svg')
+              img.responsive-img(src='/public/images/logos/logo-gxg.png', alt='Logo GXG.cz')
