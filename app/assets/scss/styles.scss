@@ -1,17 +1,16 @@
 // functions for making colors
-@import './../../node_modules/materialize-css/sass/components/color';
+@import './../../../node_modules/materialize-css/sass/components/color';
 
 // custom variables to override default materialize variables like colors etc.
 @import './components/variables';
 
-@import './../../node_modules/materialize-css/sass/materialize.scss';
+@import './../../../node_modules/materialize-css/sass/materialize.scss';
 
 html
 {
     height: 100%;
-
-    color: rgba(0,0,0,.87);
 }
+
 body
 {
     display: flex;
@@ -34,7 +33,7 @@ main
 
 .follow li
 {
-    float: left;
+    //float: left;
 }
 
 .custom-icon
