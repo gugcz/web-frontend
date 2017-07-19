@@ -3,66 +3,61 @@
 
 // custom variables to override default materialize variables like colors etc.
 @import './components/variables';
-
 @import './../../../node_modules/materialize-css/sass/materialize.scss';
 
 // font-awesome icons
-$fa-font-path:"/public/fonts";
+$fa-font-path: "/public/fonts";
 @import './../../../node_modules/font-awesome/scss/font-awesome.scss';
 
-html
-{
-    height: 100%;
+html {
+  height: 100%;
 }
 
-body
-{
-    display: flex;
-    flex-direction: column;
-
-    height: 100%;
-    min-height: 100vh;
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 100vh;
 }
 
-.main
-{
-    flex: 1 0 auto;
+.main {
+  flex: 1 0 auto;
 }
 
-.parallax-caption
-{
-    position: absolute;
-    top: 50%;
-    left: 0;
-
-    width: 100%;
-
-    text-align: center;
-
-    color: #000;
+.parallax-container {
+  min-height: 380px;
+  line-height: 0;
+  height: auto;
+  color: rgba(255, 255, 255, 1);
 }
 
-.parallax-headline
-{
-    font-size: 3rem;
-
-    color: #fff;
+.c_parallax-overlay {
+  background-color: #111;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  opacity: 0.46;
+  z-index: 2;
 }
 
-.svg
-{
-    width: 100%;
+.c_parallax-headline {
+  margin-top: 6rem;
 }
 
-.map-container
-{
-    height: 50vh;
+.parallax-container .section {
+  width: 100%;
 }
 
-.map-frame
-{
-    position: relative;
+.svg {
+  width: 100%;
+}
 
-    width: 100%;
-    height: 100%;
+.map-container {
+  height: 50vh;
+}
+
+.map-frame {
+  position: relative;
+  width: 100%;
+  height: 100%;
 }

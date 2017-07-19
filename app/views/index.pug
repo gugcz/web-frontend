@@ -3,11 +3,20 @@ extends layout.pug
 block content
   main
     .parallax-container
-      .parallax-caption
-        a.waves-effect.waves-light.btn(href='/')
-          | Chci se přidat
-      .parallax
-        img(src='/public/images/other/parallax-1.jpg')
+      .section.no-pad-bot
+        .container
+          h1.header.center.c_parallax-headline
+            | Google User Group
+          .row.center
+            h5.header.col.s12
+              | Komunita aktivních lidí pořádající akce nejen o Google technologiích
+          .row.center
+            a.waves-effect.waves-light.btn.btn-large(href='/')
+              | Chci se přidat
+          .parallax
+            .c_parallax-overlay
+            img(src='/public/images/other/parallax-1.jpg')
+          
     .section
       .row.container
         .col.s12.center-align
