@@ -6,6 +6,10 @@
 
 @import './../../../node_modules/materialize-css/sass/materialize.scss';
 
+// font-awesome icons
+$fa-font-path:"/public/fonts";
+@import './../../../node_modules/font-awesome/scss/font-awesome.scss';
+
 html
 {
     height: 100%;
