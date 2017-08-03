@@ -1,40 +1,23 @@
-include ../head
+extends ../layout.pug
 
-.container
-  .row
-    .section
-      .col.s12.m8
-        .card.grey.lighten-5
-          .card-content
-            h1.h3= name
+block content
 
-            p= description
-            br
-            p= description
+  .parallax-container
+    .section.no-pad-bot
+      .container
+        .wrapper
+          .wrapper
+            img(src='/public/images/logos/logo-icon-gdg.png').chapter-logo
+            h1.header GDG Brno
             p
-              a.right.waves-effect.waves-light.btn-large(href="") Chci přijít
-      .col.s12.m4
-        .card
-          .card-content
-            img.responsive-img(src=imgLink,alt=imgAlt)
+              | Google Developer Group Brno je komunitní uskupení pro vývojáře v Brně. Organizujeme akce jako jsou přednášky, hackathony nebo workshopy. Jsme otevřeni novým nápadům a spoluprácím, takže pokud máš nápad, stačí nás jen kontaktovat.
+              br
+              br
+              | GDG Brno je nezávislá skupina. Naše aktivity a výroky nemají žádnou spojitost se společností Google.
+              br
+              br
+              |  Těšíme se na vás na našich akcích!
 
-            .datetime.red.lighten-1.white-text
-              p.center= date
-
-              p.center= time
-
-            p.center
-              ul.follow.center-align
-                li
-                  a.custom-icon.custom-icon-follow.custom-icon-facebook(href=linkFacebook)
-                li
-                  a.custom-icon.custom-icon-follow.custom-icon-srazy(href=linkSrazy)
-                li
-                  a.custom-icon.custom-icon-follow.custom-icon-website(href=linkWebsite)
-
-              .clearfix
-            p.section
-              | Pořádá: 
-              a(href=chapterLink) #{chapterName}
-
-include ../foot
+        .parallax
+          .c_parallax-overlay
+          img(src='/public/images/other/parallax-1.jpg')
