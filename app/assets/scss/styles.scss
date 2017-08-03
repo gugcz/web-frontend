@@ -24,17 +24,20 @@ body {
   flex: 1 0 auto;
 }
 
-.parallax-container {
+.c_parallax-container {
   min-height: 650px;
   height: auto;
   color: rgba(255, 255, 255, 1);
 }
 
-// TODO min height for main page 380px
 .c_parallax-container {
   min-height: 650px;
   height: auto;
   color: rgba(255, 255, 255, 1);
+}
+
+.c_parallax-container--homepage {
+  min-height: 380px;
 }
 
 .c_parallax-overlay {
@@ -53,7 +56,7 @@ body {
   margin-top: 10rem;
 }
 
-.parallax-container .section {
+.c_parallax-container .section {
   width: 100%;
 }
 
