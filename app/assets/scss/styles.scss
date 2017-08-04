@@ -79,3 +79,22 @@ body {
 .no-scrolling {
   pointer-events: none;
 }
+.orgs-row {
+  overflow-x: scroll;
+  padding-left: 10px;
+}
+.orgs{
+  display:inline-block;
+  width: auto;
+  white-space: nowrap;
+  margin: 0;
+  padding: 0;
+}
+.orgs li{
+  display: inline-block;
+}
+.org {
+  margin-right:10px;
+  width: 200px;
+}
+
