@@ -153,21 +153,73 @@ block content
     .container
       h3.header.white-text Organizátoři
       p.white-text Stejně jako GUG, tak i GDG Brno není jen organizace, je hlavně o lidech:
-      .row
-        .col.s12.m3
-          .card
-            .card-content.center
-              img.circle.responsive-img(src='/public/images/other/profilepic.jpg', alt='')
+    .orgs-row.center
+      ul.orgs
+        li.org
+          .card.hoverable
+            .card-content
+              a(href='#')
+                img.circle.responsive-img(src='/public/images/other/profilepic.jpg', alt='')
               .card-title Matěj Horák
-              .row
-                .col
-                  a(href='https://plus.google.com/\+GugCz',target='_blank')
-                    i.grey-text.fa.fa-2x.fa-google-plus(aria-hidden='true')
-                .col
-                  a(href='https://www.facebook.com/GUG.cz/',target='_blank')
+              ul.row
+                li.col.s4
+                  a(href='https://www.horm.cz',target='_blank')
                     i.grey-text.fa.fa-2x.fa-globe(aria-hidden='true')
-                .col
-                  a(href='https://twitter.com/GUGcz',target='_blank')
-                    i.grey-text.fa.fa-2x.fa-twitter(aria-hidden='true')
+                li.col.s4
+                  a(href='https://twitter.com/horakmat',target='_blank')
+                    i.grey-text.fa.fa-2x.fa-twitter-square(aria-hidden='true')
+                li.col.s4
+                  a(href='https://plus.google.com/\+MatejHorakHorm',target='_blank')
+                    i.grey-text.fa.fa-2x.fa-google-plus-square(aria-hidden='true')
+        li.org
+          .card.hoverable
+            .card-content
+              a(href='#')
+                img.circle.responsive-img(src='/public/images/other/profilepic2.jpg', alt='')
+              .card-title Martin Kokeš
+              ul.row
+                li.col.s4
+                  a(href='https://www.martinkokes.cz',target='_blank')
+                    i.grey-text.fa.fa-2x.fa-globe(aria-hidden='true')
+                li.col.s4
+                  a(href='https://twitter.com/martinkokescz',target='_blank')
+                    i.grey-text.fa.fa-2x.fa-twitter-square(aria-hidden='true')
+                li.col.s4
+                  a(href='https://plus.google.com/\+MartinKokesCZ',target='_blank')
+                    i.grey-text.fa.fa-2x.fa-google-plus-square(aria-hidden='true')
+        li.org
+          .card.hoverable
+            .card-content
+              a(href='#')
+                img.circle.responsive-img(src='/public/images/other/profilepic3.jpg', alt='')
+              .card-title Milan Lempera
+              ul.row
+                li.col.s4
+                  a(href='https://www.angular.cz',target='_blank')
+                    i.grey-text.fa.fa-2x.fa-globe(aria-hidden='true')
+                li.col.s4
+                  a(href='https://twitter.com/MilanLempera',target='_blank')
+                    i.grey-text.fa.fa-2x.fa-twitter-square(aria-hidden='true')
+                li.col.s4
+                  a(href='https://plus.google.com/\+MilanLempera',target='_blank')
+                    i.grey-text.fa.fa-2x.fa-google-plus-square(aria-hidden='true')
+        li.org
+          .card.hoverable
+            .card-content
+              a(href='#')
+                img.circle.responsive-img(src='/public/images/other/profilepic4.jpg', alt='')
+              .card-title Václav Pavlíček
+              ul.row
+                li.col.s4
+                  a(href='http://mojegeekoviny.blogspot.cz/',target='_blank')
+                    i.grey-text.fa.fa-2x.fa-globe(aria-hidden='true')
+                li.col.s4
+                  a(href='https://twitter.com/VendaskyCZ',target='_blank')
+                    i.grey-text.fa.fa-2x.fa-twitter-square(aria-hidden='true')
+                li.col.s4
+                  a(href='https://plus.google.com/\+VáclavPavlíček',target='_blank')
+                    i.grey-text.fa.fa-2x.fa-google-plus-square(aria-hidden='true')
+    .container
       p.white-text Máš chuť se taky podílet? Jsme otevřeni novým tvářím. Navíc to můžeš jenom zkusit a sám uvidíš jestli tě to bude bavit. My si troufáme tvrdit, že ano!
       a.waves-effect.waves-light.btn Přidej se k nám
+
