@@ -79,70 +79,28 @@ block content
         p.white-text GUG není jen organizace, je hlavně o lidech:
       .orgs-row.center
         ul.orgs
-          li.org
-            .card.hoverable
-              .card-content
-                a(href='#')
-                  img.circle.responsive-img(src='/public/images/other/profilepic.jpg', alt='')
-                .card-title Matěj Horák
-                ul.row
-                  li.col.s4
-                    a(href='https://www.horm.cz',target='_blank')
-                      i.grey-text.fa.fa-2x.fa-globe(aria-hidden='true')
-                  li.col.s4
-                    a(href='https://twitter.com/horakmat',target='_blank')
-                      i.grey-text.fa.fa-2x.fa-twitter-square(aria-hidden='true')
-                  li.col.s4
-                    a(href='https://plus.google.com/\+MatejHorakHorm',target='_blank')
-                      i.grey-text.fa.fa-2x.fa-google-plus-square(aria-hidden='true')
-          li.org
-            .card.hoverable
-              .card-content
-                a(href='#')
-                  img.circle.responsive-img(src='/public/images/other/profilepic2.jpg', alt='')
-                .card-title Martin Kokeš
-                ul.row
-                  li.col.s4
-                    a(href='https://www.martinkokes.cz',target='_blank')
-                      i.grey-text.fa.fa-2x.fa-globe(aria-hidden='true')
-                  li.col.s4
-                    a(href='https://twitter.com/martinkokescz',target='_blank')
-                      i.grey-text.fa.fa-2x.fa-twitter-square(aria-hidden='true')
-                  li.col.s4
-                    a(href='https://plus.google.com/\+MartinKokesCZ',target='_blank')
-                      i.grey-text.fa.fa-2x.fa-google-plus-square(aria-hidden='true')
-          li.org
-            .card.hoverable
-              .card-content
-                a(href='#')
-                  img.circle.responsive-img(src='/public/images/other/profilepic3.jpg', alt='')
-                .card-title Milan Lempera
-                ul.row
-                  li.col.s4
-                    a(href='https://www.angular.cz',target='_blank')
-                      i.grey-text.fa.fa-2x.fa-globe(aria-hidden='true')
-                  li.col.s4
-                    a(href='https://twitter.com/MilanLempera',target='_blank')
-                      i.grey-text.fa.fa-2x.fa-twitter-square(aria-hidden='true')
-                  li.col.s4
-                    a(href='https://plus.google.com/\+MilanLempera',target='_blank')
-                      i.grey-text.fa.fa-2x.fa-google-plus-square(aria-hidden='true')
-          li.org
-            .card.hoverable
-              .card-content
-                a(href='#')
-                  img.circle.responsive-img(src='/public/images/other/profilepic4.jpg', alt='')
-                .card-title Václav Pavlíček
-                ul.row
-                  li.col.s4
-                    a(href='http://mojegeekoviny.blogspot.cz/',target='_blank')
-                      i.grey-text.fa.fa-2x.fa-globe(aria-hidden='true')
-                  li.col.s4
-                    a(href='https://twitter.com/VendaskyCZ',target='_blank')
-                      i.grey-text.fa.fa-2x.fa-twitter-square(aria-hidden='true')
-                  li.col.s4
-                    a(href='https://plus.google.com/\+VáclavPavlíček',target='_blank')
-                      i.grey-text.fa.fa-2x.fa-google-plus-square(aria-hidden='true')
+          mixin organizer(name, imageURL, websiteLink, twitterLink, gPlusLink)
+            li.org
+              .card.hoverable
+                .card-content
+                  a(href='#')
+                    img.circle.responsive-img(src=imageURL, alt='')
+                  .card-title= name
+                  ul.row
+                    li.col.s4
+                      a(href=websiteLink,target='_blank')
+                        i.grey-text.fa.fa-2x.fa-globe(aria-hidden='true')
+                    li.col.s4
+                      a(href=twitterLink,target='_blank')
+                        i.grey-text.fa.fa-2x.fa-twitter-square(aria-hidden='true')
+                    li.col.s4
+                      a(href=gPlusLink,target='_blank')
+                        i.grey-text.fa.fa-2x.fa-google-plus-square(aria-hidden='true')
+          +organizer('Matěj Horák', '/public/images/other/profilepic.jpg', 'https://www.horm.cz', 'https://twitter.com/horakmat', 'https://plus.google.com/+MatejHorakHorm')
+          +organizer('Martin Kokeš', '/public/images/other/profilepic2.jpg', 'https://www.martinkokes.cz', 'https://twitter.com/martinkokescz', 'https://plus.google.com/+MartinKokesCZ')
+          +organizer('Milan Lempera', '/public/images/other/profilepic3.jpg', 'https://www.angular.cz', 'https://twitter.com/MilanLempera', 'https://plus.google.com/+MilanLempera')
+          +organizer('Václav Pavlíček', '/public/images/other/profilepic4.jpg', 'http://mojegeekoviny.blogspot.cz/', 'https://twitter.com/VendaskyCZ', 'https://plus.google.com/+VáclavPavlíček')
+
       .container
         p.white-text Máš chuť se taky podílet? Jsme otevřeni novým tvářím. Navíc to můžeš jenom zkusit a sám uvidíš jestli tě to bude bavit. My si troufáme tvrdit, že ano!
         a.waves-effect.waves-light.btn Přidej se k nám
