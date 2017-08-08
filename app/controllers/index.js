@@ -1,4 +1,5 @@
 const sectionModel = require('../models/sections');
+const organizerModel = require('../models/organizers');
 const NotFound = require('../errorDefinitions').NotFound;
 
 module.exports = async function indexController(req, res) {
@@ -8,11 +9,13 @@ module.exports = async function indexController(req, res) {
   }
 
   const sections = await sectionModel.getSections();
+  const organizers = await organizerModel.getOrganizers()
 
   res.render('index', {
     title: 'Česká Google User Group',
     message: 'Hello there!',
-    sections
+    sections,
+    organizers
   });
 };
 
