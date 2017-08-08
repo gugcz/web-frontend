@@ -7,6 +7,13 @@ exports.getOrganizers = async function () {
     .then(responseConverterFactory(url));
 };
 
+exports.getOrganizersForChapter = async function (id) {
+
+  const url = 'https://us-central1-gug-web.cloudfunctions.net/getOrganizers?chapter=' + id;
+
+  return fetch(url)
+    .then(responseConverterFactory(url))
+};
 // TODO move to model helpers
 function responseConverterFactory(resourceName) {
   return function responseToJson(response) {

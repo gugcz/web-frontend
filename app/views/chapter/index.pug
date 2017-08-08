@@ -144,11 +144,8 @@ block content
                     li.col.s4
                       a(href=gPlusLink,target='_blank')
                         i.grey-text.fa.fa-2x.fa-google-plus-square(aria-hidden='true')
-        +organizer('Matěj Horák', '/public/images/other/profilepic.jpg', 'https://www.horm.cz', 'https://twitter.com/horakmat', 'https://plus.google.com/+MatejHorakHorm')
-        +organizer('Martin Kokeš', '/public/images/other/profilepic2.jpg', 'https://www.martinkokes.cz', 'https://twitter.com/martinkokescz', 'https://plus.google.com/+MartinKokesCZ')
-        +organizer('Milan Lempera', '/public/images/other/profilepic3.jpg', 'https://www.angular.cz', 'https://twitter.com/MilanLempera', 'https://plus.google.com/+MilanLempera')
-        +organizer('Václav Pavlíček', '/public/images/other/profilepic4.jpg', 'http://mojegeekoviny.blogspot.cz/', 'https://twitter.com/VendaskyCZ', 'https://plus.google.com/+VáclavPavlíček')
-
+        each organizer in organizers
+          +organizer(organizer.name, '/public/images/other/non_profilepic.png', '#', '#', '#')
     .container
       p.white-text Máš chuť se taky podílet? Jsme otevřeni novým tvářím. Navíc to můžeš jenom zkusit a sám uvidíš jestli tě to bude bavit. My si troufáme tvrdit, že ano!
       a.waves-effect.waves-light.btn Přidej se k nám

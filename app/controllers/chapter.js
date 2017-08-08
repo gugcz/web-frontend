@@ -1,5 +1,8 @@
-module.exports = function (req, res) {
+const organizerModel = require('../models/organizers');
 
+module.exports = async function (req, res) {
+
+  const organizers = await organizerModel.getOrganizersForChapter(req.params.chapterId)
   res.render('chapter/index', {
 
     title: 'GDG Brno',
@@ -16,6 +19,8 @@ module.exports = function (req, res) {
     linkFacebook: 'https://www.facebook.com/groups/ctvrtkon/',
     linkSrazy: 'http://srazy.info/ctvrtkon/7130',
     linkCustom: 'http://ctvrtkon.cz/pozvanka-na-ctvrtkon-54-2-brezna-2017/',
+
+    organizers: organizers,
 
 
     // Chapter info
