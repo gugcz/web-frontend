@@ -7,9 +7,9 @@ admin.initializeApp(functions.config().firebase);
 // https://firebase.google.com/docs/functions/write-firebase-functions
 exports.helloGDG = functions.https.onRequest((request, response) => {
   var gdgNamePromise = admin.database().ref('sections/gdg/name').once('value');
-console.log(gdgNamePromise)
+  console.log(gdgNamePromise)
 
-gdgNamePromise.then(nameSnapshot => response.send("Hello " + nameSnapshot.val() + " from Firebase!"));
+  gdgNamePromise.then(nameSnapshot => response.send("Hello " + nameSnapshot.val() + " from Firebase!"));
 });
 
 exports.getOrganizers = functions.https.onRequest((request, response) => {
@@ -23,10 +23,30 @@ exports.getOrganizers = functions.https.onRequest((request, response) => {
 
     var organizersArray = Object.keys(organizers).map(function(k) { return organizers[k] });
 
-    response.send(organizersArray.map(function filterOrganizerArray(organizer) {
+    var filteredAndShuffledOrganizersArray = shuffle(organizersArray.map(function filterOrganizerArray(organizer) {
       return {name: organizer.name}
     }))
+    response.send(filteredAndShuffledOrganizersArray)
 
+  }
+
+  function shuffle(array) {
+    var currentIndex = array.length, temporaryValue, randomIndex;
+
+    // While there remain elements to shuffle...
+    while (0 !== currentIndex) {
+
+      // Pick a remaining element...
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex -= 1;
+
+      // And swap it with the current element.
+      temporaryValue = array[currentIndex];
+      array[currentIndex] = array[randomIndex];
+      array[randomIndex] = temporaryValue;
+    }
+
+    return array;
   }
 
 
