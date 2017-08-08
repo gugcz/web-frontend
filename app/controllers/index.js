@@ -10,7 +10,7 @@ module.exports = async function indexController(req, res) {
   const sections = await sectionModel.getSections();
 
   res.render('index', {
-    title: 'Hey',
+    title: 'Česká Google User Group',
     message: 'Hello there!',
     sections
   });

@@ -2,7 +2,7 @@ module.exports = function (req, res) {
 
   res.render('chapter/index', {
 
-    title: 'Jak na sociální sítě',
+    title: 'GDG Brno',
 
     // Basic info
     date: '02.03.2017',
