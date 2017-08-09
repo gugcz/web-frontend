@@ -7,16 +7,9 @@ block content
       .container
         .wrapper
           .wrapper
-            img(src='/public/images/logos/logo-icon-gdg.png').chapter-logo
-            h1.header GDG Brno
-            p
-              | Google Developer Group Brno je komunitní uskupení pro vývojáře v Brně. Organizujeme akce jako jsou přednášky, hackathony nebo workshopy. Jsme otevřeni novým nápadům a spoluprácím, takže pokud máš nápad, stačí nás jen kontaktovat.
-              br
-              br
-              | GDG Brno je nezávislá skupina. Naše aktivity a výroky nemají žádnou spojitost se společností Google.
-              br
-              br
-              |  Těšíme se na vás na našich akcích!
+            img(src=sectionIconURL).chapter-logo
+            h1.header #{name}
+            p !{description}
 
         .parallax
           .c_parallax-overlay
@@ -95,8 +88,6 @@ block content
     .container
       h3.header Minulé akce
       .row
-
-
         +event('Angular 2 Workshop', 'Workshop zaměřený na základní koncepty a práci s frameworkem Angular ve verzi 2!', '/public/images/other/event_cover.jpg')
         +event('Angular 2 Workshop', 'Workshop zaměřený na základní koncepty a práci s frameworkem Angular ve verzi 2!', '/public/images/other/event_cover.jpg')
         +event('Angular 2 Workshop', 'Workshop zaměřený na základní koncepty a práci s frameworkem Angular ve verzi 2!', '/public/images/other/event_cover.jpg')

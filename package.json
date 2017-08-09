@@ -1,5 +1,5 @@
 {
-  "name": "gug-cz_web-frontend",
+  "name": "gug-web-public",
   "version": "1.0.0",
   "description": "Frontend for new GUG.cz web",
   "main": "app/app.js",
