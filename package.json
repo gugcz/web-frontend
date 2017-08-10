@@ -20,7 +20,7 @@
     "fonts:font-awesome": "mkdir -p public/fonts && cp -R node_modules/font-awesome/fonts/* public/fonts/",
     "build:fonts": "npm run fonts:font-awesome",
     "predevel": "npm install",
-    "start": "npm run start:dev",
+    "start": "npm run start:prod",
     "start:dev": "NODE_ENV=development nodemon app/app.js --watch 'app/' --ignore 'app/assets'",
     "start:prod": "npm run build && NODE_ENV=production node app/app.js",
     "watch": "npm run build && npm-run-all --parallel watch:* start:dev",
@@ -51,20 +51,25 @@
     "jquery": "^3.1.0",
     "materialize-css": "^0.99.0",
     "node-fetch": "^1.7.1",
-    "pug": "^2.0.0-rc.2"
-  },
-  "devDependencies": {
-    "autoprefixer": "^7.1.1",
-    "browser-sync": "^2.18.12",
-    "connect-browser-sync": "^2.1.0",
-    "eslint": "^4.1.1",
-    "eslint-config-google": "^0.8.0",
+    "pug": "^2.0.0-rc.2",
+
+
     "node-sass": "^4.5.3",
     "nodemon": "^1.11.0",
     "npm-run-all": "^4.0.2",
+
+    "eslint": "^4.1.1",
+    "eslint-config-google": "^0.8.0",
+
+    "uglify-js": "^3.0.23",
+    "autoprefixer": "^7.1.1",
+    "browser-sync": "^2.18.12",
+    "connect-browser-sync": "^2.1.0",
     "onchange": "^3.2.1",
     "postcss": "^6.0.4",
-    "svgo": "^0.7.2",
-    "uglify-js": "^3.0.23"
+    "svgo": "^0.7.2"
+  },
+  "devDependencies": {
+
   }
 }

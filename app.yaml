@@ -6,3 +6,6 @@ automatic_scaling:
 
 env_variables:
   NODE_ENV: production
+
+health_check:
+  enable_health_check: False
