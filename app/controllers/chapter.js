@@ -10,6 +10,7 @@ module.exports = async function (req, res) {
   res.render('chapter/index', {
 
     name: chapter.name,
+    title: chapter.name,
     section: chapter.section,
     sectionIconURL: section.images.icon,
     description: chapter.description,

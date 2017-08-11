@@ -123,7 +123,10 @@ block content
             a(href='#')
               .card.hoverable
                 .card-content
-                  img.circle.responsive-img(src=imageURL, alt='')
+                  if imageURL
+                    img.circle.responsive-img(src=imageURL, alt='')
+                  else
+                    img.circle.responsive-img(src='/public/images/other/non_profilepic.png', alt='')
                   .card-title= name
                   ul.row
                     li.col.s4
@@ -136,7 +139,7 @@ block content
                       a(href=gPlusLink,target='_blank')
                         i.grey-text.fa.fa-2x.fa-google-plus-square(aria-hidden='true')
         each organizer in organizers
-          +organizer(organizer.name, '/public/images/other/non_profilepic.png', '#', '#', '#')
+          +organizer(organizer.name, organizer.profilePicture, '#', '#', '#')
     .container
       p.white-text Máš chuť se taky podílet? Jsme otevřeni novým tvářím. Navíc to můžeš jenom zkusit a sám uvidíš jestli tě to bude bavit. My si troufáme tvrdit, že ano!
       a.waves-effect.waves-light.btn Přidej se k nám
