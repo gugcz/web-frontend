@@ -13,6 +13,7 @@ html {
   height: 100%;
 }
 
+
 body {
   display: flex;
   flex-direction: column;
@@ -101,5 +102,10 @@ body {
 a {
   color:inherit;
   text-decoration: none;
+}
+
+.social-icons-row {
+  width: max-content;
+  margin-bottom: 0px;
 }
 

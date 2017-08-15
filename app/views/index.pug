@@ -79,7 +79,7 @@ block content
         p.white-text GUG není jen organizace, je hlavně o lidech:
       .orgs-row.center
         ul.orgs
-          mixin organizer(name, imageURL, websiteLink, twitterLink, gPlusLink)
+          mixin organizer(name, imageURL, websiteLink, twitterLink, gPlusLink, links)
             li.org
               a(href='#')
                 .card.hoverable
@@ -89,18 +89,25 @@ block content
                     else
                       img.circle.responsive-img(src='/public/images/other/non_profilepic.png', alt='')
                     .card-title= name
-                    ul.row
-                      li.col.s4
-                        a(href=websiteLink,target='_blank')
-                          i.grey-text.fa.fa-2x.fa-globe(aria-hidden='true')
-                      li.col.s4
-                        a(href=twitterLink,target='_blank')
-                          i.grey-text.fa.fa-2x.fa-twitter-square(aria-hidden='true')
-                      li.col.s4
-                        a(href=gPlusLink,target='_blank')
-                          i.grey-text.fa.fa-2x.fa-google-plus-square(aria-hidden='true')
+                    .center
+                      ul.row.social-icons-row
+                        if links
+                          each link in links
+                            li.col
+                              a(href=link.url,target='_blank')
+                                if link.type === 'web'
+                                  i.grey-text.fa.fa-2x.fa-globe(aria-hidden='true')
+                                else if link.type === 'twitter'
+                                  i.grey-text.fa.fa-2x.fa-twitter(aria-hidden='true')
+                                else if link.type === 'google-plus'
+                                  i.grey-text.fa.fa-2x.fa-google-plus-circle(aria-hidden='true')
+                                else
+                                  i.grey-text.fa.fa-2x.fa-link(aria-hidden='true')
+                        else
+                          li.col
+                            i.white-text.fa.fa-2x.fa-square
           each organizer in organizers
-            +organizer(organizer.name, organizer.profilePicture, '#', '#', '#')
+            +organizer(organizer.name, organizer.profilePicture, '#', '#', '#', organizer.links)
 
       .container
         p.white-text Máš chuť se taky podílet? Jsme otevřeni novým tvářím. Navíc to můžeš jenom zkusit a sám uvidíš jestli tě to bude bavit. My si troufáme tvrdit, že ano!
