@@ -15,6 +15,7 @@ module.exports = async function (req, res) {
     sectionIconURL: section.images.icon,
     description: chapter.description,
     organizers: organizers,
+    links: chapter.links
 
   });
 };

@@ -27,15 +27,27 @@ block content
         .col.s12.m4
           h5 Sledujte nás
           .row
-            .col
-              a(href='https://plus.google.com/\+GugCz',target='_blank')
-                i.grey-text.fa.fa-2x.fa-google-plus(aria-hidden='true')
-            .col
-              a(href='https://www.facebook.com/GUG.cz/',target='_blank')
-                i.grey-text.fa.fa-2x.fa-globe(aria-hidden='true')
-            .col
-              a(href='https://twitter.com/GUGcz',target='_blank')
-                i.grey-text.fa.fa-2x.fa-twitter(aria-hidden='true')
+            mixin link(type, url)
+              .col
+                a(href=url,target='_blank')
+                  if type === 'web'
+                    i.grey-text.fa.fa-2x.fa-globe(aria-hidden='true')
+                  else if type === 'twitter'
+                    i.grey-text.fa.fa-2x.fa-twitter(aria-hidden='true')
+                  else if type === 'google-plus'
+                    i.grey-text.fa.fa-2x.fa-google-plus(aria-hidden='true')
+                  else if type === 'facebook'
+                    i.grey-text.fa.fa-2x.fa-facebook(aria-hidden='true')
+                  else if type === 'meetup'
+                    i.grey-text.fa.fa-2x.fa-meetup(aria-hidden='true')
+                  else if type === 'google-directory'
+                    i.grey-text.fa.fa-2x.fa-google(aria-hidden='true')
+                  else if type === 'blog'
+                    i.grey-text.fa.fa-2x.fa-rss(aria-hidden='true')
+                  else
+                    i.grey-text.fa.fa-2x.fa-link(aria-hidden='true')
+            each link in links
+              +link(link.type, link.url)
 
 
   mixin event(name, subtitle, coverURL)
@@ -149,19 +161,46 @@ block content
       i.grey-text.fa.fa-2x.fa-envelope(aria-hidden='true').medium
       h4.grey-text gdgbrno@gug.cz
       h1
-      .divider
-      h1
-      ul.row
-        li.col.s3
-          a(href='',target='_blank')
-            i.grey-text.fa.fa-2x.fa-twitter(aria-hidden='true').medium
-        li.col.s3
-          a(href='',target='_blank')
-            i.grey-text.fa.fa-2x.fa-google-plus(aria-hidden='true').medium
-        li.col.s3
-          a(href='',target='_blank')
-            i.grey-text.fa.fa-2x.fa-facebook(aria-hidden='true').medium
-        li.col.s3
-          a(href='',target='_blank')
-            i.grey-text.fa.fa-2x.fa-medium(aria-hidden='true').medium
+      if links
+        mixin link(type, url)
+          .col.s2
+            a(href=url,target='_blank')
+              if type === 'web'
+                i.grey-text.fa.fa-2x.fa-globe(aria-hidden='true').medium
+              else if type === 'twitter'
+                i.grey-text.fa.fa-2x.fa-twitter(aria-hidden='true').medium
+              else if type === 'google-plus'
+                i.grey-text.fa.fa-2x.fa-google-plus(aria-hidden='true').medium
+              else if type === 'facebook'
+                i.grey-text.fa.fa-2x.fa-facebook(aria-hidden='true').medium
+              else if type === 'meetup'
+                i.grey-text.fa.fa-2x.fa-meetup(aria-hidden='true').medium
+              else if type === 'google-directory'
+                i.grey-text.fa.fa-2x.fa-google(aria-hidden='true').medium
+              else if type === 'blog'
+                i.grey-text.fa.fa-2x.fa-rss(aria-hidden='true').medium
+              else
+                i.grey-text.fa.fa-2x.fa-link(aria-hidden='true').medium
+        .divider
+        h1
+        ul.row
+          if links.length === 6
+            each link in links
+              +link(link.type, link.url)
+          else if links.length === 5
+            .col.offset-s1
+            each link in links
+              +link(link.type, link.url)
+          else if links.length === 4
+            .col.offset-s2
+            each link in links
+              +link(link.type, link.url)
+          else if links.length === 3
+            .col.offset-s3
+            each link in links
+              +link(link.type, link.url)
+          else if links.length === 2
+            .col.offset-s4
+            each link in links
+              +link(link.type, link.url)
 
