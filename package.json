@@ -25,6 +25,7 @@
     "start:prod": "npm run build && NODE_ENV=production node app/app.js",
     "watch": "npm run build && npm-run-all --parallel watch:* start:dev",
     "build": "npm-run-all build:*",
+    "test": "jasmine",
     "deploy": "gcloud app deploy --project gug-web-public --version 1"
   },
   "engines": {
@@ -52,15 +53,11 @@
     "materialize-css": "^0.99.0",
     "node-fetch": "^1.7.1",
     "pug": "^2.0.0-rc.2",
-
-
     "node-sass": "^4.5.3",
     "nodemon": "^1.11.0",
     "npm-run-all": "^4.0.2",
-
     "eslint": "^4.1.1",
     "eslint-config-google": "^0.8.0",
-
     "uglify-js": "^3.0.23",
     "autoprefixer": "^7.1.1",
     "browser-sync": "^2.18.12",
@@ -70,6 +67,6 @@
     "svgo": "^0.7.2"
   },
   "devDependencies": {
-
+    "jasmine": "^2.7.0"
   }
 }
