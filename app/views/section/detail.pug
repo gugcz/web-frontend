@@ -2,11 +2,60 @@ extends ../layout.pug
 
 block content
   .main
+    .parallax-container.c_parallax-container.c_parallax-container--homepage
+      .section.no-pad-bot
+        .container
+          h1.header.center.c_parallax-headline #{section.name}
+          .row.center
+            a.waves-effect.waves-light.btn.btn-large(href='/')
+              | Chci se přidat
+          .parallax
+            .c_parallax-overlay
+            img(src='/public/images/other/parallax-1.jpg')
     .section
-      .row.container
-        .col.s12.center-align
-          h1.header= section.shortcut + ' - ' + section.name
+      .container.center
+        h3 Jaké akce pořádáme
+        .row
+          .col.s12.m6.l3
+            i.material-icons.large.blue-text comment
+            h5 Přednášky
+            p Přijď si poslechnout zkušenosti s projektem nebo technologií
+          .col.s12.m6.l3
+            i.material-icons.large.red-text code
+            h5 Hackathony
+            p Přijď během několika hodin vytvořit něco, co tu ještě nebylo
+          .col.s12.m6.l3
+            i.material-icons.large.yellow-text school
+            h5 Workshopy
+            p Přijď se dozvědět něco nového a hned si to vyzkoušet v praxi
+          .col.s12.m6.l3
+            i.material-icons.large.green-text videocam
+            h5 Streamy
+            p Nekoukej doma a přijď sledovat konferenci s námi
+    .section.map-container
+      .map-frame.no-scrolling
+        iframe(src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d1329523.3595726762!2d15.5901342!3d49.3951879!3m2!1i1024!2i768!4f13.1!5e0!3m2!1scs!2scz!4v1499013621281", width="100%", height="100%", frameborder="0", scrolling="false", style="border:0", allowfullscreen)
 
+    .section
+      .container
+        h3 Skupiny
+        .center
+          .col
+            .row
+              img(src='/public/images/logos/logo-gdg-brno.png').chapter-logo
+          .col
+            .row
+              img(src='/public/images/logos/logo-gdg-brno.png').chapter-logo
+          .col
+            .row
+              img(src='/public/images/logos/logo-gdg-brno.png').chapter-logo
+          .col
+            .row
+              img(src='/public/images/logos/logo-gdg-brno.png').chapter-logo
+          .col
+            .row
+              img(src='/public/images/logos/logo-gdg-brno.png').chapter-logo
+          .col
+            .row
+              img(src='/public/images/logos/logo-gdg-brno.png').chapter-logo
 
-    .col.s12
-      pre=JSON.stringify(section)

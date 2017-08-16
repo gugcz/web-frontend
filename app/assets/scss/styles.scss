@@ -54,7 +54,7 @@ body {
   margin-top: 7rem;
 }
 
-.chapter-logo {
+.section-logo {
   margin-top: 10rem;
 }
 
@@ -106,5 +106,10 @@ a {
 
 .social-icons-row {
   margin-bottom: 0px;
+}
+
+.chapter-logo {
+  width:500px; /* you can use % */
+  height: auto;
 }
 
