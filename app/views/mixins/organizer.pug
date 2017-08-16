@@ -1,21 +1,4 @@
-mixin link(type, url)
-  a(href=url,target='_blank')
-    if type === 'web'
-      i.grey-text.fa.fa-2x.fa-globe(aria-hidden='true')
-    else if type === 'twitter'
-      i.grey-text.fa.fa-2x.fa-twitter(aria-hidden='true')
-    else if type === 'google-plus'
-      i.grey-text.fa.fa-2x.fa-google-plus(aria-hidden='true')
-    else if type === 'facebook'
-      i.grey-text.fa.fa-2x.fa-facebook(aria-hidden='true')
-    else if type === 'meetup'
-      i.grey-text.fa.fa-2x.fa-meetup(aria-hidden='true')
-    else if type === 'google-directory'
-      i.grey-text.fa.fa-2x.fa-google(aria-hidden='true')
-    else if type === 'blog'
-      i.grey-text.fa.fa-2x.fa-rss(aria-hidden='true')
-    else
-      i.grey-text.fa.fa-2x.fa-link(aria-hidden='true')
+include link.pug
 
 mixin links-row(links)
   ul.row.social-icons-row

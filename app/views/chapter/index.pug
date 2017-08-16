@@ -1,6 +1,5 @@
 extends ../layout.pug
 include ../mixins/link.pug
-include ../mixins/organizer.pug
 
 block content
 
@@ -29,8 +28,8 @@ block content
         .col.s12.m4
           h5 Sledujte nás
           .row
-            each link in links
-              +link(link.type, link.url)
+            if links
+              +links(links)
 
 
   mixin event(name, subtitle, coverURL)
@@ -91,10 +90,10 @@ block content
         +event('Angular 2 Workshop', 'Workshop zaměřený na základní koncepty a práci s frameworkem Angular ve verzi 2!', '/public/images/other/event_cover.jpg')
         +event('Angular 2 Workshop', 'Workshop zaměřený na základní koncepty a práci s frameworkem Angular ve verzi 2!', '/public/images/other/event_cover.jpg')
 
-      // TODO More instead of pagination
       .right-align
         a.waves-effect.waves-light.btn Více
   .section.green
+    include ../mixins/organizer.pug
     .container
       h3.header.white-text Organizátoři
       p.white-text Stejně jako GUG, tak i GDG Brno není jen organizace, je hlavně o lidech:
@@ -108,10 +107,13 @@ block content
   .section
     .container.center
       h3.thin Zůstaňte ve spojení
-      i.grey-text.material-icons.large email
-      h4.grey-text #{email}
+      if email
+        i.grey-text.material-icons.medium email
+        h4.grey-text #{email}
       h1
-      if links
+      if email && links
         .divider
+      if links
         h1
-        +links-row-large(links)
+        +links-row(links)
+      h1
