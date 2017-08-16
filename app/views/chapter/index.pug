@@ -1,4 +1,6 @@
 extends ../layout.pug
+include ../mixins/link.pug
+include ../mixins/organizer.pug
 
 block content
 
@@ -27,25 +29,6 @@ block content
         .col.s12.m4
           h5 Sledujte nás
           .row
-            mixin link(type, url)
-              .col
-                a(href=url,target='_blank')
-                  if type === 'web'
-                    i.grey-text.fa.fa-2x.fa-globe(aria-hidden='true')
-                  else if type === 'twitter'
-                    i.grey-text.fa.fa-2x.fa-twitter(aria-hidden='true')
-                  else if type === 'google-plus'
-                    i.grey-text.fa.fa-2x.fa-google-plus(aria-hidden='true')
-                  else if type === 'facebook'
-                    i.grey-text.fa.fa-2x.fa-facebook(aria-hidden='true')
-                  else if type === 'meetup'
-                    i.grey-text.fa.fa-2x.fa-meetup(aria-hidden='true')
-                  else if type === 'google-directory'
-                    i.grey-text.fa.fa-2x.fa-google(aria-hidden='true')
-                  else if type === 'blog'
-                    i.grey-text.fa.fa-2x.fa-rss(aria-hidden='true')
-                  else
-                    i.grey-text.fa.fa-2x.fa-link(aria-hidden='true')
             each link in links
               +link(link.type, link.url)
 
@@ -72,15 +55,16 @@ block content
               span.card-title Angular 2 Workshop
               p Workshop zaměřený na základní koncepty a práci s frameworkem Angular ve verzi 2!
               br
-              p
-                i.fa.fa-calendar
-                | 28.3.2017
-              p
-                i.fa.fa-clock-o
-                | 17:00
-              p
-                i.fa.fa-map-marker
-                | Masarykova univerzita, Fakulta informatiky
+              ul
+                li
+                  i.material-icons date_range
+                  | 28.3.2017
+                li
+                  i.material-icons access_time
+                  | 17:00
+                li
+                  i.material-icons location_on
+                  | Masarykova univerzita, Fakulta informatiky
               br
               p Workshop je vhodný i pro úplné začátečníky, o frameworku Angular nemusíte vědět vůbec nic.
               | Během workshopu Vás provedeme těmi nejdůležitějšími částmi, abyste na konci měli představu, jak framework
@@ -108,84 +92,26 @@ block content
         +event('Angular 2 Workshop', 'Workshop zaměřený na základní koncepty a práci s frameworkem Angular ve verzi 2!', '/public/images/other/event_cover.jpg')
 
       // TODO More instead of pagination
-      a.waves-effect.waves-light.btn.right-align Více
+      .right-align
+        a.waves-effect.waves-light.btn Více
   .section.green
     .container
       h3.header.white-text Organizátoři
       p.white-text Stejně jako GUG, tak i GDG Brno není jen organizace, je hlavně o lidech:
     .orgs-row.center
       ul.orgs
-        mixin organizer(name, imageURL, websiteLink, twitterLink, gPlusLink)
-          li.org
-            a(href='#')
-              .card.hoverable
-                .card-content
-                  if imageURL
-                    img.circle.responsive-img(src=imageURL, alt='')
-                  else
-                    img.circle.responsive-img(src='/public/images/other/non_profilepic.png', alt='')
-                  .card-title= name
-                  ul.row
-                    li.col.s4
-                      a(href=websiteLink,target='_blank')
-                        i.grey-text.fa.fa-2x.fa-globe(aria-hidden='true')
-                    li.col.s4
-                      a(href=twitterLink,target='_blank')
-                        i.grey-text.fa.fa-2x.fa-twitter-square(aria-hidden='true')
-                    li.col.s4
-                      a(href=gPlusLink,target='_blank')
-                        i.grey-text.fa.fa-2x.fa-google-plus-square(aria-hidden='true')
         each organizer in organizers
-          +organizer(organizer.name, organizer.profilePicture, '#', '#', '#')
+          +organizer(organizer.name, organizer.profilePicture, organizer.links)
     .container
       p.white-text Máš chuť se taky podílet? Jsme otevřeni novým tvářím. Navíc to můžeš jenom zkusit a sám uvidíš jestli tě to bude bavit. My si troufáme tvrdit, že ano!
       a.waves-effect.waves-light.btn Přidej se k nám
   .section
     .container.center
       h3.thin Zůstaňte ve spojení
-      i.grey-text.fa.fa-2x.fa-envelope(aria-hidden='true').medium
-      h4.grey-text gdgbrno@gug.cz
+      i.grey-text.material-icons.large email
+      h4.grey-text #{email}
       h1
       if links
-        mixin link(type, url)
-          .col.s2
-            a(href=url,target='_blank')
-              if type === 'web'
-                i.grey-text.fa.fa-2x.fa-globe(aria-hidden='true').medium
-              else if type === 'twitter'
-                i.grey-text.fa.fa-2x.fa-twitter(aria-hidden='true').medium
-              else if type === 'google-plus'
-                i.grey-text.fa.fa-2x.fa-google-plus(aria-hidden='true').medium
-              else if type === 'facebook'
-                i.grey-text.fa.fa-2x.fa-facebook(aria-hidden='true').medium
-              else if type === 'meetup'
-                i.grey-text.fa.fa-2x.fa-meetup(aria-hidden='true').medium
-              else if type === 'google-directory'
-                i.grey-text.fa.fa-2x.fa-google(aria-hidden='true').medium
-              else if type === 'blog'
-                i.grey-text.fa.fa-2x.fa-rss(aria-hidden='true').medium
-              else
-                i.grey-text.fa.fa-2x.fa-link(aria-hidden='true').medium
         .divider
         h1
-        ul.row
-          if links.length === 6
-            each link in links
-              +link(link.type, link.url)
-          else if links.length === 5
-            .col.offset-s1
-            each link in links
-              +link(link.type, link.url)
-          else if links.length === 4
-            .col.offset-s2
-            each link in links
-              +link(link.type, link.url)
-          else if links.length === 3
-            .col.offset-s3
-            each link in links
-              +link(link.type, link.url)
-          else if links.length === 2
-            .col.offset-s4
-            each link in links
-              +link(link.type, link.url)
-
+        +links-row-large(links)
