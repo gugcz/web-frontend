@@ -12,7 +12,7 @@ module.exports = async function (req, res) {
     name: chapter.name,
     title: chapter.name,
     section: chapter.section,
-    sectionIconURL: section.images.icon,
+    sectionIconURL: 'section.images.icon',
     description: chapter.description,
     organizers: organizers,
     email: chapter.email,

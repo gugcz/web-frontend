@@ -2,9 +2,16 @@
 
 module.exports = function (req, res) {
 
+  var links = [
+    {
+      type: 'facebook',
+      url: ''
+    }
+  ]
+
   res.render('event/index', {
 
-    title: 'Jak na sociální sítě',
+    title: 'Angular 2 Workshop',
 
     // Basic info
     date: '02.03.2017',
@@ -22,6 +29,7 @@ module.exports = function (req, res) {
 
     // Chapter info
     chapterName: 'GBG České Budějovice',
-    chapterLink: 'http://www.gug.cz/cs/gbg/skupiny/ceske-budejovice'
+    chapterLink: 'http://www.gug.cz/cs/gbg/skupiny/ceske-budejovice',
+    links: links
   });
 };
