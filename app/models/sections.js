@@ -1,9 +1,10 @@
 const fetch = require('node-fetch');
 const NotFound = require('../errorDefinitions').NotFound;
 const FIREBASE_URL = require('../config').FIREBASE_URL;
+const CLOUD_FUNCTIONS_URL = require('../config').CLOUD_FUNCTIONS_URL;
 
 exports.getSections = async function () {
-  const url = FIREBASE_URL + 'sections.json';
+  const url = CLOUD_FUNCTIONS_URL + '/getSections';
   return fetch(url)
     .then(responseConverterFactory(url));
 };
