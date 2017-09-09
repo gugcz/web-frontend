@@ -58,6 +58,7 @@
     "materialize-css": "^0.99.0",
     "node-fetch": "^1.7.1",
     "node-sass": "^4.5.3",
+    "node-vibrant": "^3.0.0-alpha.2",
     "nodemon": "^1.11.0",
     "npm-run-all": "^4.0.2",
     "onchange": "^3.2.1",

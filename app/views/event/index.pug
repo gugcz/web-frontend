@@ -3,31 +3,40 @@ include ../mixins/link.pug
 
 block content
   h1
-  .section.green
+  .section
     .container
       .card
         .card-image
-          img(src='/public/images/other/event_cover.jpg')
-          a.btn-floating.btn-large.halfway-fab.waves-effect.waves-light
+          img(src='/public/images/other/event_cover3.jpg')
+          a.btn-floating.btn-large.halfway-fab.waves-effect.waves-light.red
             i.material-icons local_play
         .card-content
-          span.card-title.large Angular 2 Workshop
-          p Workshop zaměřený na základní koncepty a práci s frameworkem Angular ve verzi 2!
+          span.card-title.large #{name}
+          p #{subtitle}
+          //.row
+            .col.s8
+              p Workshop zaměřený na základní koncepty a práci s frameworkem Angular ve verzi 2!
+            .col.s4
+              a.btn.halfway-fab.waves-effect.waves-light Registrovat se
       .row
         .col.s8
           .card
             .card-content
               span.card-title Kdy a kde
               ul
+                if dates.isMultiDay
+                  p not implemented
+                else
+                  li
+                    i.material-icons date_range
+                    | #{dates.date}
+                  li
+                    i.material-icons access_time
+                    | #{dates.time}
                 li
-                  i.material-icons date_range
-                  | 28.3.2017
-                li
-                  i.material-icons access_time
-                  | 17:00
-                li
-                  i.material-icons location_on
-                  | Masarykova univerzita, Fakulta informatiky
+                  a(href=venue.mapUrl)
+                    i.material-icons location_on
+                    | #{venue.name}
           .card
             .card-content
               span.card-title O akci
@@ -38,10 +47,6 @@ block content
               p Akce bude o něco delší než obvykle a bude rozdělena do tří částí, každá z částí bude včetně přestávky zhruba na hodinu, tedy končit budeme přibližně v 20:00 v každé probereme kousek teorie a pak si všechno sami vyzkoušíte.
               br
               p Po akci bude spousta času pobavit se v přilehlé hospůdce o dalších aspektech frameworku Angular.
-              p ...
-            .card-action
-              a(href='#') Registrovat se
-              a(href='#') Více informací
         .col.s4
           .card
             .card-content

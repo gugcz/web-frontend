@@ -5,6 +5,7 @@ const indexController = require('./controllers/index');
 const errorsController = require('./controllers/errors');
 const sectionController = require('./controllers/section');
 const chapterController = require('./controllers/chapter');
+const eventController = require('./controllers/event');
 
 const app = express();
 
@@ -21,8 +22,7 @@ app.set('views', [__dirname + '/views/']);
 //app.use('/node_modules', express.static(__dirname + '/../node_modules'));
 app.use('/public', express.static(__dirname + '/../public'));
 
-//app.use('/chapter', require('./controllers/chapter'));
-app.use('/event', require('./controllers/event'));
+app.use('/event/:eventUrl', asyncErrorChecking(eventController));
 app.use('/events', require('./controllers/events'));
 
 app.use('/section/:sectionName', asyncErrorChecking(sectionController));
