@@ -12,7 +12,7 @@ module.exports = async function (req, res) {
     name: chapter.name,
     title: chapter.name,
     section: chapter.section,
-    sectionIconURL: 'section.images.icon',
+    sectionIconURL: '/public/images/logos/' + chapter.section + '-icon.png',
     description: chapter.description,
     organizers: organizers,
     email: chapter.email,
