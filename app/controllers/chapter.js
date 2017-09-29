@@ -8,9 +8,10 @@ module.exports = async function (req, res) {
   const chapter = await chapterModel.getChapterInfo(req.params.chapterId);
   const section = await sectionModel.getSection(chapter.section);
   res.render('chapter/index', {
+    title: chapter.name,
+    favicon: chapter.section,
 
     name: chapter.name,
-    title: chapter.name,
     section: chapter.section,
     sectionIconURL: '/public/images/logos/' + chapter.section + '-icon.png',
     description: chapter.description,

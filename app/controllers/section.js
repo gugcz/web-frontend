@@ -7,6 +7,8 @@ module.exports = async function sectionController(req, res) {
 
   res.render('section/detail', {
     section,
+    title: section.name,
+    favicon: req.params.sectionName,
     chapters
   });
 };

@@ -28,6 +28,7 @@ module.exports = async function indexController(req, res) {
 
   res.render('index', {
     title: 'Česká Google User Group',
+    favicon: 'gug',
     message: 'Hello there!',
     sections,
     organizers,

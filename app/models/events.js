@@ -4,7 +4,7 @@ const CLOUD_FUNCTIONS_URL = require('../config').CLOUD_FUNCTIONS_URL;
 
 exports.getEventInfo = async function (id) {
 
-  const url = CLOUD_FUNCTIONS_URL + 'getPublishedEvent?id=' + id;
+  const url = CLOUD_FUNCTIONS_URL + 'getEvent?id=' + id;
 
   return fetch(url)
     .then(responseConverterFactory(url))

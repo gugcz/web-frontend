@@ -17,6 +17,7 @@ module.exports = async function (req, res) {
   res.render('event/index', {
 
     title: event.name,
+    favicon: 'gug',
 
     // Basic info
     dates: event.dates,
