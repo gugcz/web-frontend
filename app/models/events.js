@@ -10,6 +10,14 @@ exports.getEventInfo = async function (id) {
     .then(responseConverterFactory(url))
 };
 
+exports.getPastSixEvents = async function (chapterId) {
+
+  const url = CLOUD_FUNCTIONS_URL + 'getPastSixEvents?chapter=' + chapterId;
+
+  return fetch(url)
+    .then(responseConverterFactory(url))
+};
+
 
 // TODO move to model helpers
 function responseConverterFactory(resourceName) {

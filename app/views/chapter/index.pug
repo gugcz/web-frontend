@@ -32,12 +32,13 @@ block content
               +links(links)
 
 
-  mixin event(name, subtitle, coverURL)
+  mixin event(name, subtitle, coverURL, eventUrlId)
     .col.s12.m4
-      a(href='#')
-        .card.hoverable
+      a(href="../event/" + eventUrlId)
+        .card.hoverable.event-card
           .card-image
-            img(src=coverURL)
+            if coverURL
+              img(src=coverURL)
           .card-content
             .card-title= name
             p= subtitle
@@ -82,13 +83,9 @@ block content
   .section
     .container
       h3.header Minulé akce
-      .row
-        +event('Angular 2 Workshop', 'Workshop zaměřený na základní koncepty a práci s frameworkem Angular ve verzi 2!', '/public/images/other/event_cover.jpg')
-        +event('Angular 2 Workshop', 'Workshop zaměřený na základní koncepty a práci s frameworkem Angular ve verzi 2!', '/public/images/other/event_cover.jpg')
-        +event('Angular 2 Workshop', 'Workshop zaměřený na základní koncepty a práci s frameworkem Angular ve verzi 2!', '/public/images/other/event_cover.jpg')
-        +event('Angular 2 Workshop', 'Workshop zaměřený na základní koncepty a práci s frameworkem Angular ve verzi 2!', '/public/images/other/event_cover.jpg')
-        +event('Angular 2 Workshop', 'Workshop zaměřený na základní koncepty a práci s frameworkem Angular ve verzi 2!', '/public/images/other/event_cover.jpg')
-        +event('Angular 2 Workshop', 'Workshop zaměřený na základní koncepty a práci s frameworkem Angular ve verzi 2!', '/public/images/other/event_cover.jpg')
+      .row.past-events-list
+        each pastEvent in pastEvents
+          +event(pastEvent.name, pastEvent.subtitle, pastEvent.cover, pastEvent.urlId)
 
       .right-align
         a.waves-effect.waves-light.btn Více
