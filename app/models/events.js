@@ -18,6 +18,14 @@ exports.getPastSixEvents = async function (chapterId) {
     .then(responseConverterFactory(url))
 };
 
+exports.getFutureEvents = async function (chapterId) {
+
+  const url = CLOUD_FUNCTIONS_URL + 'getFutureEvents?chapter=' + chapterId;
+
+  return fetch(url)
+    .then(responseConverterFactory(url))
+};
+
 
 // TODO move to model helpers
 function responseConverterFactory(resourceName) {

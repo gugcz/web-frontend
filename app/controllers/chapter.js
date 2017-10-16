@@ -8,6 +8,7 @@ module.exports = async function (req, res) {
   const organizers = await organizerModel.getOrganizersForChapter(chapterId);
   const chapter = await chapterModel.getChapterInfo(chapterId);
   const pastEvents = await eventModel.getPastSixEvents(chapterId);
+  const futureEvents = await eventModel.getFutureEvents(chapterId);
   res.render('chapter/index', {
     title: chapter.name,
     favicon: chapter.section,
@@ -17,6 +18,7 @@ module.exports = async function (req, res) {
     sectionIconURL: '/public/images/logos/' + chapter.section + '-icon.png',
     description: chapter.description,
     organizers: organizers,
+    futureEvents: futureEvents,
     pastEvents: pastEvents,
     email: chapter.email,
     links: chapter.links

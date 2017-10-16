@@ -1,6 +1,42 @@
 extends ../layout.pug
 include ../mixins/link.pug
 
+mixin event(name, subtitle, coverURL, eventUrlId)
+  .col.s12.m4
+    a(href="../event/" + eventUrlId)
+      .card.hoverable.event-card
+        .card-image
+          if coverURL
+            img(src=coverURL)
+        .card-content
+          .card-title= name
+          p= subtitle
+
+mixin event-big(urlId, name, cover, subtitle, description, dates, venue, regFormLink)
+  .col.s12.m8
+    .card.hoverable
+      .card-image
+        img(src=cover)
+      .card-content
+        span.card-title=name
+        p=subtitle
+        br
+        ul
+          li
+            i.material-icons date_range
+            | #{dates.date}
+          li
+            i.material-icons access_time
+            | #{dates.time}
+          li
+            i.material-icons location_on
+            | #{venue.name}
+        br
+        p !{description}
+      .card-action
+        a(href=regFormLink) Registrovat se
+        a(href='/event/' + urlId) Více informací
+
 block content
 
   .parallax-container.c_parallax-container
@@ -19,66 +55,40 @@ block content
   .section
     .container
       h3.header Nejbližší akce
-      .row
-        .col.s12.m8
-          .card
-            .card-content
-              span.card-title Momentálně nemáme vystavenou žádnou akci
-              p Aktuálně nemáme vystavenou žádnou akci. Je však možné, že na nějaké pracujeme. Sleduj nás na sociálních sítích ať ti nic neunikne!
-        .col.s12.m4
-          h5 Sledujte nás
-          .row
-            if links
-              +links(links)
+      if futureEvents.length === 0
 
+        .row
+          .col.s12.m8
+            .card
+              .card-content
+                span.card-title Momentálně nemáme vystavenou žádnou akci
+                p Aktuálně nemáme vystavenou žádnou akci. Je však možné, že na nějaké pracujeme. Sleduj nás na sociálních sítích ať ti nic neunikne!
+          .col.s12.m4
+            h5 Sledujte nás
+            .row
+              if links
+                +links(links)
+      else if futureEvents.length === 1
 
-  mixin event(name, subtitle, coverURL, eventUrlId)
-    .col.s12.m4
-      a(href="../event/" + eventUrlId)
-        .card.hoverable.event-card
-          .card-image
-            if coverURL
-              img(src=coverURL)
-          .card-content
-            .card-title= name
-            p= subtitle
-
-  .section
-    .container
-      h3.header Nejbližší akce
-      .row
-        .col.s12.m8
-          .card.hoverable
-            .card-image
-              img(src='/public/images/other/event_cover.jpg')
-            .card-content
-              span.card-title Angular 2 Workshop
-              p Workshop zaměřený na základní koncepty a práci s frameworkem Angular ve verzi 2!
-              br
-              ul
-                li
-                  i.material-icons date_range
-                  | 28.3.2017
-                li
-                  i.material-icons access_time
-                  | 17:00
-                li
-                  i.material-icons location_on
-                  | Masarykova univerzita, Fakulta informatiky
-              br
-              p Workshop je vhodný i pro úplné začátečníky, o frameworku Angular nemusíte vědět vůbec nic.
-              | Během workshopu Vás provedeme těmi nejdůležitějšími částmi, abyste na konci měli představu, jak framework
-              | funguje a jaká je jeho filozofie.
-              br
-              p Akce bude o něco delší než obvykle a bude rozdělena do tří částí, každá z částí bude včetně přestávky zhruba na hodinu, tedy končit budeme přibližně v 20:00 v každé probereme kousek teorie a pak si všechno sami vyzkoušíte.
-              br
-              p Po akci bude spousta času pobavit se v přilehlé hospůdce o dalších aspektech frameworku Angular.
-              p ...
-            .card-action
-              a(href='#') Registrovat se
-              a(href='#') Více informací
-
-        +event('Firebase Codelab', 'Akce kde si vyzkoušíš Firebase v praxi!', '/public/images/other/event_cover2.png')
+        .row
+          -var futureEvent = futureEvents[0]
+          +event-big(futureEvent.urlId, futureEvent.name, futureEvent.cover, futureEvent.subtitle, futureEvent.description, futureEvent.dates, futureEvent.venue, futureEvent.regFormLink)
+          .col.s12.m4
+            h5 Sledujte nás
+            .row
+              if links
+                +links(links)
+      else
+        .row
+          -var futureEvent = futureEvents[0]
+          +event-big(futureEvent.urlId, futureEvent.name, futureEvent.cover, futureEvent.subtitle, futureEvent.description, futureEvent.dates, futureEvent.venue, futureEvent.regFormLink)
+          each nextFutureEvent in futureEvents.slice(1)
+            +event(nextFutureEvent.name, nextFutureEvent.subtitle, nextFutureEvent.cover)
+          .col.s12.m4
+            h5 Sledujte nás
+            .row
+              if links
+                +links(links)
 
   .section
     .container
