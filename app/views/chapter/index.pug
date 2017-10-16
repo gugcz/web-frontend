@@ -87,6 +87,11 @@ block content
         each pastEvent in pastEvents
           +event(pastEvent.name, pastEvent.subtitle, pastEvent.cover, pastEvent.urlId)
 
+        // Unable to remove margin
+        -var n = pastEvents.length % 3
+        while n-- >= 0
+          .col.s12.m4
+
       .right-align
         a.waves-effect.waves-light.btn Více
   .section.green
