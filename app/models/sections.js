@@ -10,7 +10,7 @@ exports.getSections = async function () {
 };
 
 exports.getSection = async function (id) {
-  const url = FIREBASE_URL + `sections/${id}.json`;
+  const url = CLOUD_FUNCTIONS_URL + '/getSection?id=' + id;
 
   return fetch(url)
     .then(responseConverterFactory(url))
