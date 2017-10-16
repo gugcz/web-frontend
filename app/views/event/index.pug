@@ -8,8 +8,9 @@ block content
       .row
         .col.m8.s12
           .card
-            .card-image
-              img(src='/public/images/other/event_cover3.jpg')
+            if cover
+              .card-image
+                img(src=cover)
             .card-content
               span.card-title.large #{name}
               p #{subtitle}
@@ -37,13 +38,7 @@ block content
           .card
             .card-content
               span.card-title O akci
-              p Workshop je vhodný i pro úplné začátečníky, o frameworku Angular nemusíte vědět vůbec nic.
-              | Během workshopu Vás provedeme těmi nejdůležitějšími částmi, abyste na konci měli představu, jak framework
-              | funguje a jaká je jeho filozofie.
-              br
-              p Akce bude o něco delší než obvykle a bude rozdělena do tří částí, každá z částí bude včetně přestávky zhruba na hodinu, tedy končit budeme přibližně v 20:00 v každé probereme kousek teorie a pak si všechno sami vyzkoušíte.
-              br
-              p Po akci bude spousta času pobavit se v přilehlé hospůdce o dalších aspektech frameworku Angular.
+              p !{description}
 
         .col.m4.s12
           .card
@@ -52,17 +47,25 @@ block content
 
               .row
                 .col
-                  img.responsive-img(src='/public/images/logos/logo-gdg-brno.png')
-                  img.responsive-img(src='/public/images/logos/logo-gdg-brno.png')
+                  each chapter in chapters
+                    a(href='/chapter/' + chapter.urlId)
+                      if chapter.logo
+                        img.responsive-img(src=chapter.logo)
+                      else
+                        p=chapter.name
         .col.m4.s12
           .card
             .card-content
               span.card-title Organizátoři
 
               .row
-                .col.s3
-                  img.responsive-img.circle(src='/public/images/other/non_profilepic.png')
-                  p.center Matěj
+                each org in organizers
+                  .col.s4
+                    if org.profilePicture
+                      img.responsive-img.circle(src=org.profilePicture)
+                    else
+                      img.responsive-img.circle(src='/public/images/other/non_profilepic.png')
+                    p.center=org.name
         .col.m4.s12
           .card
             .card-content

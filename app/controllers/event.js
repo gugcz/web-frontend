@@ -7,12 +7,6 @@ module.exports = async function (req, res) {
 
   console.log(event)
 
-  var links = [
-    {
-      type: 'facebook',
-      url: ''
-    }
-  ]
 
   res.render('event/index', {
 
@@ -22,16 +16,17 @@ module.exports = async function (req, res) {
     // Basic info
     dates: event.dates,
     name: event.name,
+    cover: event.cover,
     subtitle: event.subtitle,
     description: event.description,
     venue: event.venue,
-    imgLink: "http://materializecss.com/images/sample-1.jpg",
-    imgAlt: "Obrázek eventu",
+
+
 
 
     // Chapter info
-    chapterName: 'GBG České Budějovice',
-    chapterLink: 'http://www.gug.cz/cs/gbg/skupiny/ceske-budejovice',
+    chapters: event.chapters,
+    organizers: event.organizers,
     links: event.links
   });
 };
