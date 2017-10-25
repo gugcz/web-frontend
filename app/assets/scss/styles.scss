@@ -124,6 +124,18 @@ a {
   flex-wrap: wrap;
 }
 
-.event-card {
-  height: 95%;
+.event-detail {
+  margin-bottom: 6px;
+}
+
+.event-parameter {
+  display: inline-block;
+  //margin-left: 10px;
+  margin-top: 4px;
+  font-size: 1rem;
+}
+
+.event-parameter--sm {
+  display: inline-block !important;
+  font-size: 1rem;
 }

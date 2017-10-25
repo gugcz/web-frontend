@@ -14,36 +14,35 @@ block content
             .card-content
               span.card-title.large #{name}
               p #{subtitle}
-
-        .col.m4.s12
-          .card
-            .card-content
-              span.card-title Kdy a kde
               ul
                 if dates.isMultiDay
                   p not implemented
                 else
-                  li
-                    i.material-icons date_range
-                    | #{dates.date}
-                  li
-                    i.material-icons access_time
-                    | #{dates.time}
-                li
-                  a(href=venue.mapUrl)
-                    i.material-icons location_on
-                    | #{venue.name}
-              a.btn-large Registrovat se
-        .col.m8.s12
+                  li.row.event-detail
+                    .col
+                      i.small.material-icons date_range
+                    .col
+                      .event-parameter
+                        | #{dates.date} (#{dates.time})
+                  li.row.event-detail
+                    .col
+                      a(href=venue.mapUrl)
+                        i.small.material-icons location_on
+                    .col
+                      a(href=venue.mapUrl)
+                        .event-parameter.truncate
+                            | #{venue.name}
+                a.btn.right Registrovat
+                br
           .card
             .card-content
               span.card-title O akci
               p !{description}
-
+              
         .col.m4.s12
           .card
             .card-content
-              span.card-title Organizující skupiny
+              span.card-title Organizuje
 
               .row
                 .col
@@ -53,7 +52,6 @@ block content
                         img.responsive-img(src=chapter.logo)
                       else
                         p=chapter.name
-        .col.m4.s12
           .card
             .card-content
               span.card-title Organizátoři
@@ -66,13 +64,35 @@ block content
                     else
                       img.responsive-img.circle(src='/public/images/other/non_profilepic.png')
                     p.center=org.name
-        .col.m4.s12
+
           .card
             .card-content
               span.card-title Sledujte akci
               .row
                 if links
                   +links(links)
+        .col.m4.s12
+          //- .card
+          //-   .card-content
+          //-     ul
+          //-       if dates.isMultiDay
+          //-         p not implemented
+          //-       else
+          //-         li
+          //-           i.small.material-icons date_range
+          //-           .event-parameter
+          //-             | #{dates.date}
+          //-         li
+          //-           i.small.material-icons access_time
+          //-           .event-parameter
+          //-             | #{dates.time}
+          //-       li
+          //-         a(href=venue.mapUrl)
+          //-           i.small.material-icons location_on
+          //-           .event-parameter--sm.truncate
+          //-               | #{venue.name}
+          //-     a.btn-large Registrovat
+        .col.m8.s12
+          
 
-
-
+        
