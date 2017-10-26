@@ -16,7 +16,12 @@ block content
               p #{subtitle}
               ul
                 if dates.isMultiDay
-                  p not implemented
+                  li.row.event-detail
+                    .col
+                      i.small.material-icons date_range
+                    .col
+                      .event-parameter
+                        | #{dates.datesAndTimes}
                 else
                   li.row.event-detail
                     .col
@@ -38,7 +43,7 @@ block content
             .card-content
               span.card-title O akci
               p !{description}
-              
+
         .col.m4.s12
           .card
             .card-content
@@ -93,6 +98,6 @@ block content
           //-               | #{venue.name}
           //-     a.btn-large Registrovat
         .col.m8.s12
-          
 
-        
+
+

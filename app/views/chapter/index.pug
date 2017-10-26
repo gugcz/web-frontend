@@ -46,7 +46,10 @@ block content
           .wrapper
             img(src=sectionIconURL).section-logo
             h1.header #{name}
-            p !{description}
+            .row
+              .col.s8
+                p !{description}
+
 
         .parallax
           .c_parallax-overlay
@@ -103,12 +106,12 @@ block content
           .col.s12.m4
 
       .right-align
-        a.waves-effect.waves-light.btn Více
+        a.waves-effect.waves-light.btn.disabled Více akcí
   .section.green
     include ../mixins/organizer.pug
     .container
       h3.header.white-text Organizátoři
-      p.white-text Stejně jako GUG, tak i GDG Brno není jen organizace, je hlavně o lidech:
+      p.white-text Stejně jako GUG, tak i #{name} není jen organizace, je hlavně o lidech:
     .orgs-row.center
       ul.orgs
         each organizer in organizers

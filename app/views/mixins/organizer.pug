@@ -27,12 +27,12 @@ mixin links-row(links)
 
 mixin organizer(name, imageURL, links)
   li.org
-    a(href='#')
-      .card.hoverable
-        .card-content
-          if imageURL
-            img.circle.responsive-img(src=imageURL, alt='')
-          else
-            img.circle.responsive-img(src='/public/images/other/non_profilepic.png', alt='')
-          .card-title= name
-          +links-row(links)
+    //a(href='#')
+    .card
+      .card-content
+        if imageURL
+          img.circle.responsive-img(src=imageURL, alt='')
+        else
+          img.circle.responsive-img(src='/public/images/other/non_profilepic.png', alt='')
+        .card-title= name
+        +links-row(links)
