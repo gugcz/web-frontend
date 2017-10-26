@@ -24,6 +24,7 @@ app.use('/public', express.static(__dirname + '/../public'));
 
 app.use('/event/:eventUrl', asyncErrorChecking(eventController));
 app.use('/events', require('./controllers/events'));
+app.use('/join', require('./controllers/join'));
 
 app.use('/section/:sectionName', asyncErrorChecking(sectionController));
 app.use('/chapter/:chapterId', asyncErrorChecking(chapterController));
