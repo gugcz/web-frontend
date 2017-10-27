@@ -22,20 +22,40 @@ mixin event-big(urlId, name, cover, subtitle, description, dates, venue, regForm
         p=subtitle
         br
         ul
-          li
-            i.material-icons date_range
-            | #{dates.date}
-          li
-            i.material-icons access_time
-            | #{dates.time}
-          li
-            i.material-icons location_on
-            | #{venue.name}
-        br
+          if dates.isMultiDay
+            li.row.event-detail
+              .col
+                i.small.material-icons date_range
+              .col
+                .event-parameter
+                  | #{dates.datesAndTimes}
+            li.row.event-detail
+              .col
+                a(href=venue.mapUrl)
+                  i.small.material-icons location_on
+              .col
+                a(href=venue.mapUrl)
+                  .event-parameter.truncate
+                    | #{venue.name}
+          else
+            li.row.event-detail
+              .col
+                i.small.material-icons date_range
+              .col
+                .event-parameter
+                  | #{dates.date} (#{dates.time})
+            li.row.event-detail
+              .col
+                a(href=venue.mapUrl)
+                  i.small.material-icons location_on
+              .col
+                a(href=venue.mapUrl)
+                  .event-parameter.truncate
+                    | #{venue.name}
         p !{description}
       .card-action
-        a(href=regFormLink) Registrovat se
-        a(href='/event/' + urlId) Více informací
+        a(href=regFormLink).blue-text Registrovat se
+        a(href='/event/' + urlId).blue-text Více informací
 
 block content
 

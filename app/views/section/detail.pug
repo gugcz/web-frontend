@@ -39,10 +39,10 @@ block content
     .section
       .container
         h3 Skupiny
-        .center.container
-
+        .row
           if chapters
-            .container
-              each chapter in chapters
-                a(href='../chapter/' + chapter.id).waves-effect
-                  img(src='https://storage.googleapis.com/gug-web.appspot.com/logos/chapter/' + chapter.id + '.png').responsive-img
+            each chapter in chapters
+              if chapter.logo
+                .col
+                  a(href='../chapter/' + chapter.id).card-panel.waves-effect
+                    img(src=chapter.logo).chapter-list-item

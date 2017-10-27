@@ -22,6 +22,14 @@ block content
                     .col
                       .event-parameter
                         | #{dates.datesAndTimes}
+                  li.row.event-detail
+                    .col
+                      a(href=venue.mapUrl)
+                        i.small.material-icons location_on
+                    .col
+                      a(href=venue.mapUrl)
+                        .event-parameter.truncate
+                          | #{venue.name}
                 else
                   li.row.event-detail
                     .col
@@ -37,7 +45,7 @@ block content
                       a(href=venue.mapUrl)
                         .event-parameter.truncate
                             | #{venue.name}
-                a.btn.right Registrovat
+                a(href=regFormLink).btn.right Registrovat
                 br
           .card
             .card-content

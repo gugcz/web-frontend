@@ -20,7 +20,7 @@ module.exports = async function (req, res) {
     subtitle: event.subtitle,
     description: event.description,
     venue: event.venue,
-
+    regFormLink: event.regFormLink,
 
 
 
