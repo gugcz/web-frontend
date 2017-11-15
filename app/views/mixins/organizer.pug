@@ -25,14 +25,20 @@ mixin links-row(links)
       .col.s3
         i.white-text.fa.fa-2x.fa-square(aria-hidden='true')
 
+mixin profile-picture(url)
+  if url
+    img.responsive-img.circle(src=url)
+  else
+    img.responsive-img.circle(src='/public/images/other/non_profilepic.png')
+
 mixin organizer(name, imageURL, links)
   li.org
     //a(href='#')
     .card
       .card-content
-        if imageURL
-          img.circle.responsive-img(src=imageURL, alt='')
-        else
-          img.circle.responsive-img(src='/public/images/other/non_profilepic.png', alt='')
+        +profile-picture(imageURL)
         .card-title= name
         +links-row(links)
+
+
+

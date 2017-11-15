@@ -1,5 +1,6 @@
 extends ../layout.pug
 include ../mixins/link.pug
+include ../mixins/organizer.pug
 
 block content
   h1
@@ -22,14 +23,6 @@ block content
                     .col
                       .event-parameter
                         | #{dates.datesAndTimes}
-                  li.row.event-detail
-                    .col
-                      a(href=venue.mapUrl)
-                        i.small.material-icons location_on
-                    .col
-                      a(href=venue.mapUrl)
-                        .event-parameter.truncate
-                          | #{venue.name}
                 else
                   li.row.event-detail
                     .col
@@ -37,14 +30,14 @@ block content
                     .col
                       .event-parameter
                         | #{dates.date} (#{dates.time})
-                  li.row.event-detail
-                    .col
-                      a(href=venue.mapUrl)
-                        i.small.material-icons location_on
-                    .col
-                      a(href=venue.mapUrl)
-                        .event-parameter.truncate
-                            | #{venue.name}
+                li.row.event-detail
+                  .col
+                    a(href=venue.mapUrl)
+                      i.small.material-icons location_on
+                  .col
+                    a(href=venue.mapUrl)
+                      .event-parameter.truncate
+                          | #{venue.name}
                 a(href=regFormLink).btn.right Registrovat
                 br
           .card
@@ -72,10 +65,7 @@ block content
               .row
                 each org in organizers
                   .col.s4
-                    if org.profilePicture
-                      img.responsive-img.circle(src=org.profilePicture)
-                    else
-                      img.responsive-img.circle(src='/public/images/other/non_profilepic.png')
+                    +profile-picture(org.profilePicture)
                     p.center=org.name
 
           .card
@@ -84,28 +74,6 @@ block content
               .row
                 if links
                   +links(links)
-        .col.m4.s12
-          //- .card
-          //-   .card-content
-          //-     ul
-          //-       if dates.isMultiDay
-          //-         p not implemented
-          //-       else
-          //-         li
-          //-           i.small.material-icons date_range
-          //-           .event-parameter
-          //-             | #{dates.date}
-          //-         li
-          //-           i.small.material-icons access_time
-          //-           .event-parameter
-          //-             | #{dates.time}
-          //-       li
-          //-         a(href=venue.mapUrl)
-          //-           i.small.material-icons location_on
-          //-           .event-parameter--sm.truncate
-          //-               | #{venue.name}
-          //-     a.btn-large Registrovat
-        .col.m8.s12
 
 
 
