@@ -9,6 +9,12 @@ module.exports = async function (req, res) {
   const chapter = await chapterModel.getChapterInfo(chapterId);
   const pastEvents = await eventModel.getPastSixEvents(chapterId);
   const futureEvents = await eventModel.getFutureEvents(chapterId);
+
+  String.prototype.replaceAll = function(search, replacement) {
+    var target = this;
+    return target.replace(new RegExp(search, 'g'), replacement);
+  };
+
   res.render('chapter/index', {
     title: chapter.name,
     favicon: chapter.section,
@@ -16,7 +22,7 @@ module.exports = async function (req, res) {
     name: chapter.name,
     section: chapter.section,
     sectionIconURL: '/public/images/logos/' + chapter.section + '-icon.png',
-    description: chapter.description,
+    description: chapter.description.replaceAll('\n', '<br/>'),
     organizers: organizers,
     futureEvents: futureEvents,
     pastEvents: pastEvents,
