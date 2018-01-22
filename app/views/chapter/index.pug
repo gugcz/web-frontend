@@ -9,8 +9,8 @@ mixin event(name, subtitle, coverURL, eventUrlId)
           if coverURL
             img(src=coverURL)
         .card-content
-          .card-title= name
-          p= subtitle
+          .card-title.black-text= name
+          p.black-text= subtitle
 
 mixin event-big(urlId, name, cover, subtitle, description, dates, venue, regFormLink)
   .col.s12.m8
@@ -53,6 +53,7 @@ mixin event-big(urlId, name, cover, subtitle, description, dates, venue, regForm
                   .event-parameter.truncate
                     | #{venue.name}
         // TODO Remove replaceAll
+      .card-content.c_event-description
         p !{description.replaceAll('\n', '<br/>').replaceAll('strong', 'b').replaceAll('h1', 'h5').replaceAll('h2', 'h5').replaceAll('h3', 'h5').replaceAll('h4', 'h5').replaceAll('h6', 'h5')}
       .card-action
         a(href=regFormLink).blue-text Registrovat se
