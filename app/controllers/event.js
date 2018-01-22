@@ -7,6 +7,11 @@ module.exports = async function (req, res) {
 
   console.log(event)
 
+  String.prototype.replaceAll = function(search, replacement) {
+    var target = this;
+    return target.replace(new RegExp(search, 'g'), replacement);
+  };
+
 
   res.render('event/index', {
 
@@ -18,7 +23,7 @@ module.exports = async function (req, res) {
     name: event.name,
     cover: event.cover,
     subtitle: event.subtitle,
-    description: event.description,
+    description: replaceMarkdownHtmlTags(event.description),
     venue: event.venue,
     regFormLink: event.regFormLink,
 
@@ -38,4 +43,14 @@ function getDate(date) {
 
 function getTime(date) {
   return date.toLocaleTimeString()
+}
+
+function replaceMarkdownHtmlTags(description) {
+  return description.replaceAll('\n', '<br/>')
+                    .replaceAll('strong', 'b')
+                    .replaceAll('h1', 'h5')
+                    .replaceAll('h2', 'h5')
+                    .replaceAll('h3', 'h5')
+                    .replaceAll('h4', 'h5')
+                    .replaceAll('h6', 'h5')
 }

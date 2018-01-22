@@ -32,10 +32,10 @@ block content
                         | #{dates.date} (#{dates.time})
                 li.row.event-detail
                   .col
-                    a(href=venue.mapUrl)
+                    a(href=venue.mapUrl).black-text
                       i.small.material-icons location_on
                   .col
-                    a(href=venue.mapUrl)
+                    a(href=venue.mapUrl).black-text
                       .event-parameter.truncate
                           | #{venue.name}
                 a(href=regFormLink).btn.right Registrovat
@@ -43,7 +43,7 @@ block content
           .card
             .card-content
               span.card-title O akci
-              p !{description}
+              p.enable-list !{description}
 
         .col.m4.s12
           .card
@@ -53,7 +53,7 @@ block content
               .row
                 .col
                   each chapter in chapters
-                    a(href='/chapter/' + chapter.urlId)
+                    a(href='/chapter/' + chapter.urlId).waves-effect
                       if chapter.logo
                         img.responsive-img(src=chapter.logo)
                       else
@@ -65,7 +65,10 @@ block content
               .row
                 each org in organizers
                   .col.s4
-                    +profile-picture(org.profilePicture)
+                    if org.profilePicture
+                      img.circle(src=org.profilePicture).responsive-img
+                    else
+                      img.circle(src='/public/images/other/non_profilepic.png').responsive-img
                     p.center=org.name
 
           .card

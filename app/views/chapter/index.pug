@@ -31,10 +31,10 @@ mixin event-big(urlId, name, cover, subtitle, description, dates, venue, regForm
                   | #{dates.datesAndTimes}
             li.row.event-detail
               .col
-                a(href=venue.mapUrl)
+                a(href=venue.mapUrl).black-text
                   i.small.material-icons location_on
               .col
-                a(href=venue.mapUrl)
+                a(href=venue.mapUrl).black-text
                   .event-parameter.truncate
                     | #{venue.name}
           else
@@ -46,10 +46,10 @@ mixin event-big(urlId, name, cover, subtitle, description, dates, venue, regForm
                   | #{dates.date} (#{dates.time})
             li.row.event-detail
               .col
-                a(href=venue.mapUrl)
+                a(href=venue.mapUrl).black-text
                   i.small.material-icons location_on
               .col
-                a(href=venue.mapUrl)
+                a(href=venue.mapUrl).black-text
                   .event-parameter.truncate
                     | #{venue.name}
         p !{description}
@@ -106,27 +106,30 @@ block content
           -var futureEvent = futureEvents[0]
           +event-big(futureEvent.urlId, futureEvent.name, futureEvent.cover, futureEvent.subtitle, futureEvent.description, futureEvent.dates, futureEvent.venue, futureEvent.regFormLink)
           each nextFutureEvent in futureEvents.slice(1)
-            +event(nextFutureEvent.name, nextFutureEvent.subtitle, nextFutureEvent.cover)
+            +event(nextFutureEvent.name, nextFutureEvent.subtitle, nextFutureEvent.cover, nextFutureEvent.urlId)
           .col.s12.m4
             h5 Sledujte nás
             .row
               if links
                 +links(links)
 
-  .section
-    .container
-      h3.header Minulé akce
-      .row.past-events-list
-        each pastEvent in pastEvents
-          +event(pastEvent.name, pastEvent.subtitle, pastEvent.cover, pastEvent.urlId)
+  if pastEvents.length !== 0
+    .section
+      .container
+        h3.header Minulé akce
+        .row.past-events-list
+          each pastEvent in pastEvents
+            +event(pastEvent.name, pastEvent.subtitle, pastEvent.cover, pastEvent.urlId)
 
-        // Unable to remove margin
-        -var n = pastEvents.length % 3
-        while n-- >= 0
-          .col.s12.m4
+          // Unable to remove margin
+          -var n = pastEvents.length % 3
+          while n-- >= 0
+            .col.s12.m4
 
-      .right-align
-        a.waves-effect.waves-light.btn.disabled Více akcí
+
+
+        .right-align
+          a.waves-effect.waves-light.btn.disabled Více akcí
   .section.green
     include ../mixins/organizer.pug
     .container
