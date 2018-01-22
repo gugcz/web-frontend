@@ -52,7 +52,8 @@ mixin event-big(urlId, name, cover, subtitle, description, dates, venue, regForm
                 a(href=venue.mapUrl).black-text
                   .event-parameter.truncate
                     | #{venue.name}
-        p !{description}
+        // TODO Remove replaceAll
+        p !{description.replaceAll('\n', '<br/>').replaceAll('strong', 'b').replaceAll('h1', 'h5').replaceAll('h2', 'h5').replaceAll('h3', 'h5').replaceAll('h4', 'h5').replaceAll('h6', 'h5')}
       .card-action
         a(href=regFormLink).blue-text Registrovat se
         a(href='/event/' + urlId).blue-text Více informací
