@@ -75,7 +75,10 @@ block content
 
         .parallax
           .c_parallax-overlay
-          img(src='/public/images/other/parallax-1.jpg')
+          if chapterCover
+            img(src=chapterCover)
+          else
+            img(src='/public/images/other/parallax-chapter.jpg')
 
   .section
     .container
