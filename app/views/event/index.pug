@@ -3,9 +3,8 @@ include ../mixins/link.pug
 include ../mixins/organizer.pug
 
 block content
-  h1
   .section.event-background
-    .container
+    .container.margin-top
       .row
         .col.m8.s12
           .card
@@ -43,7 +42,7 @@ block content
           .card
             .card-content.c_event-description
               span.card-title O akci
-              p.enable-list !{description}
+              p !{description}
 
         .col.m4.s12
           .card
@@ -71,11 +70,11 @@ block content
                       img.circle(src='/public/images/other/non_profilepic.png').responsive-img
                     p.center=org.name
 
-          .card
-            .card-content
-              span.card-title Sledujte akci
-              .row
-                if links
+          if links
+            .card
+              .card-content
+                span.card-title Sledujte akci
+                .row
                   +links(links)
 
 
