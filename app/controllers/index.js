@@ -1,5 +1,6 @@
 const sectionModel = require('../models/sections');
 const organizerModel = require('../models/organizers');
+const eventsModel = require('../models/events');
 const map = require('../controllers/event-map');
 const NotFound = require('../errorDefinitions').NotFound;
 
@@ -12,19 +13,10 @@ module.exports = async function indexController(req, res) {
   const sections = await sectionModel.getSections();
   const organizers = await organizerModel.getOrganizers()
 
-  var events = [
-    {
-      name: "Angular Workshop",
-      section: "gdg",
-      date: "9.",
-      coordinates: {
-        lat: "49.191729",
-        lnt: "16.608515"
-      }
-    }
-  ]
+  const eventsSrc = await eventsModel.getMapOfEvents()
 
-  map.initMap(events)
+
+
 
   res.render('index', {
     title: 'Česká Google User Group',
@@ -32,6 +24,7 @@ module.exports = async function indexController(req, res) {
     message: 'Hello there!',
     sections,
     organizers,
+    eventsSrc: JSON.stringify(eventsSrc)
   });
 };
 

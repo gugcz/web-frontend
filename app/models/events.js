@@ -18,6 +18,14 @@ exports.getPastSixEvents = async function (chapterId) {
     .then(responseConverterFactory(url))
 };
 
+exports.getMapOfEvents = async function (chapterId) {
+
+  const url = CLOUD_FUNCTIONS_URL + 'getMapOfEvents';
+
+  return fetch(url)
+    .then(responseConverterFactory(url))
+};
+
 exports.getFutureEvents = async function (chapterId) {
 
   const url = CLOUD_FUNCTIONS_URL + 'getFutureEvents?chapter=' + chapterId;
