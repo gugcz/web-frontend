@@ -34,8 +34,8 @@ block content
             p Nekoukej doma a přijď sledovat konferenci s námi
     .section.c_map-container
       .c_map-container__map-frame
-        iframe(src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d1329523.3595726762!2d15.5901342!3d49.3951879!3m2!1i1024!2i768!4f13.1!5e0!3m2!1scs!2scz!4v1499013621281", width="100%", height="100%", frameborder="0", scrolling="false", style="border:0", allowfullscreen)
-
+        include ../mixins/map.pug
+        +event-map(events, GMAP_API_KEY)
     .section
       .container
         h3 Skupiny

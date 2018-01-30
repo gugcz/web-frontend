@@ -3,6 +3,7 @@ const organizerModel = require('../models/organizers');
 const eventsModel = require('../models/events');
 const map = require('../controllers/event-map');
 const NotFound = require('../errorDefinitions').NotFound;
+const GMAP_API_KEY = require('../config').GOOGLE_MAP_API_KEY;
 
 module.exports = async function indexController(req, res) {
   if (req.originalUrl !== '/' &&
@@ -24,7 +25,8 @@ module.exports = async function indexController(req, res) {
     message: 'Hello there!',
     sections,
     organizers,
-    eventsSrc: JSON.stringify(eventsSrc)
+    events: JSON.stringify(eventsSrc),
+    GMAP_API_KEY: GMAP_API_KEY
   });
 };
 
