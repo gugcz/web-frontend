@@ -22,8 +22,8 @@ $(document).ready(function() {
         .css('top', -(index * 10) + 'px')
         .appendTo(div);
       tr = $('<tr/>').appendTo(table);
-      groupStyle = 'gdg';
-      $('<td/>').addClass('date ' + groupStyle).html('9' + '.').appendTo(tr);
+      groupStyle = event.section;
+      $('<td/>').addClass('date ' + groupStyle).html(event.date).appendTo(tr);
       $('<td/>').addClass('name').html(event.name).appendTo(tr);
 
       width += padding;
