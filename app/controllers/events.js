@@ -5,7 +5,7 @@ let Events = require('../models/events');
 
 module.exports = function(req, res) {
   Events.all(function(events) {
-    res.render('events/index', {
+    res.render('events', {
       title: 'Akce',
       favicon: 'gug',
       events: events,

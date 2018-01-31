@@ -13,7 +13,7 @@ module.exports = async function (req, res) {
   };
 
 
-  res.render('event/index', {
+  res.render('event', {
 
     title: event.name,
     favicon: 'gug',

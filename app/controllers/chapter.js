@@ -15,7 +15,7 @@ module.exports = async function (req, res) {
     return target.replace(new RegExp(search, 'g'), replacement);
   };
 
-  res.render('chapter/index', {
+  res.render('chapter', {
     title: chapter.name,
     favicon: chapter.section,
 
