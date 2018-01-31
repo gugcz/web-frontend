@@ -19,8 +19,12 @@ mixin link-icon(type)
     i.grey-text.fa.fa-2x.fa-link(aria-hidden='true')
 
 mixin link(type, url)
-  a(href=url,target='_blank').waves-effect
-    +link-icon(type)
+  if url.includes('http')
+    a(href=url,target='_blank').waves-effect
+      +link-icon(type)
+  else
+    a(href='https://' + url,target='_blank').waves-effect
+      +link-icon(type)
 
 mixin links(links)
   each link in links
