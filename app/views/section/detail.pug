@@ -1,4 +1,8 @@
 extends ../layout.pug
+include ./gbg.pug
+include ./gdg.pug
+include ./geg.pug
+include ./gxg.pug
 
 block content
   .main
@@ -12,26 +16,16 @@ block content
           .parallax
             .c_parallax-overlay
             img(src='/public/images/other/parallax-1.jpg')
-    .section
-      .container.center
-        h3 Jaké akce pořádáme
-        .row
-          .col.s12.m6.l3
-            i.material-icons.large.blue-text comment
-            h5 Přednášky
-            p Přijď si poslechnout zkušenosti s projektem nebo technologií
-          .col.s12.m6.l3
-            i.material-icons.large.red-text code
-            h5 Hackathony
-            p Přijď během několika hodin vytvořit něco, co tu ještě nebylo
-          .col.s12.m6.l3
-            i.material-icons.large.yellow-text school
-            h5 Workshopy
-            p Přijď se dozvědět něco nového a hned si to vyzkoušet v praxi
-          .col.s12.m6.l3
-            i.material-icons.large.green-text videocam
-            h5 Streamy
-            p Nekoukej doma a přijď sledovat konferenci s námi
+
+    // TODO replace favicon - bad naming
+    if favicon === 'gbg'
+      +gbg-content
+    else if favicon === 'gdg'
+      +gdg-content
+    else if favicon === 'geg'
+      +geg-content
+    else if favicon === 'gxg'
+      +gxg-content
     .section.c_map-container
       .c_map-container__map-frame
         include ../mixins/map.pug
