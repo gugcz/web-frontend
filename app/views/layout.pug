@@ -9,10 +9,14 @@ html
     title #{title} - GUG.cz
 
   body
-    block header
-      include layout/head
+    header
+      block header
+        include layout/head
 
+
+    // In case of needed sticky footer add main tag to content block
     block content
+
 
     block foot
       include layout/foot

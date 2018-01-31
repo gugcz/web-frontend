@@ -3,79 +3,80 @@ include ../mixins/link.pug
 include ../mixins/organizer.pug
 
 block content
-  .section.event-background
-    .container.margin-top
-      .row
-        .col.m8.s12
-          .card
-            if cover
-              .card-image
-                img(src=cover)
-            .card-content
-              span.card-title.large #{name}
-              p #{subtitle}
-              ul
-                if dates.isMultiDay
+  main.event-background
+    .section
+      .container.margin-top
+        .row
+          .col.m8.s12
+            .card
+              if cover
+                .card-image
+                  img(src=cover)
+              .card-content
+                span.card-title.large #{name}
+                p #{subtitle}
+                ul
+                  if dates.isMultiDay
+                    li.row.event-detail
+                      .col
+                        i.small.material-icons date_range
+                      .col
+                        .event-parameter
+                          | #{dates.datesAndTimes}
+                  else
+                    li.row.event-detail
+                      .col
+                        i.small.material-icons date_range
+                      .col
+                        .event-parameter
+                          | #{dates.date} (#{dates.time})
                   li.row.event-detail
                     .col
-                      i.small.material-icons date_range
+                      a(href=venue.mapUrl).black-text
+                        i.small.material-icons location_on
                     .col
-                      .event-parameter
-                        | #{dates.datesAndTimes}
-                else
-                  li.row.event-detail
-                    .col
-                      i.small.material-icons date_range
-                    .col
-                      .event-parameter
-                        | #{dates.date} (#{dates.time})
-                li.row.event-detail
-                  .col
-                    a(href=venue.mapUrl).black-text
-                      i.small.material-icons location_on
-                  .col
-                    a(href=venue.mapUrl).black-text
-                      .event-parameter.truncate
-                          | #{venue.name}
-                a(href=regFormLink).btn.right Registrovat
-                br
-          .card
-            .card-content.c_event-description
-              span.card-title O akci
-              p !{description}
+                      a(href=venue.mapUrl).black-text
+                        .event-parameter.truncate
+                            | #{venue.name}
+                  a(href=regFormLink).btn.right Registrovat
+                  br
+            .card
+              .card-content.c_event-description
+                span.card-title O akci
+                p !{description}
 
-        .col.m4.s12
-          .card
-            .card-content
-              span.card-title Organizuje
-
-              .row
-                .col
-                  each chapter in chapters
-                    a(href='/chapter/' + chapter.urlId).waves-effect
-                      if chapter.logo
-                        img.responsive-img(src=chapter.logo)
-                      else
-                        p=chapter.name
-          .card
-            .card-content
-              span.card-title Organizátoři
-
-              .row
-                each org in organizers
-                  .col.s4
-                    if org.profilePicture
-                      img.circle(src=org.profilePicture).responsive-img
-                    else
-                      img.circle(src='/public/images/other/non_profilepic.png').responsive-img
-                    p.center=org.name
-
-          if links
+          .col.m4.s12
             .card
               .card-content
-                span.card-title Sledujte akci
+                span.card-title Organizuje
+
                 .row
-                  +links(links)
+                  .col
+                    each chapter in chapters
+                      a(href='/chapter/' + chapter.urlId).waves-effect
+                        if chapter.logo
+                          img.responsive-img(src=chapter.logo)
+                        else
+                          p=chapter.name
+            .card
+              .card-content
+                span.card-title Organizátoři
+
+                .row
+                  each org in organizers
+                    .col.s4
+                      if org.profilePicture
+                        img.circle(src=org.profilePicture).responsive-img
+                      else
+                        img.circle(src='/public/images/other/non_profilepic.png').responsive-img
+                      p.center=org.name
+
+            if links
+              .card
+                .card-content
+                  span.card-title Sledujte akci
+                  .row
+                    +links(links)
 
 
 
