@@ -1,6 +1,61 @@
 mixin event-map(eventsSrc, GMAP_API_KEY)
   script(type='text/javascript', src='http://maps.googleapis.com/maps/api/js?key=' + GMAP_API_KEY + '&v=3')
   script.
+
+    const labelWidth = 210;
+    const labelHeight = 10;
+
+    function getEventLabel(event) {
+      padding = 10;
+      div = $('<div/>')[0];
+
+      width = 210;
+      height = 10;
+
+      table = $('<div/>').addClass('card')
+        .css('position', 'relative')
+        .appendTo(div);
+      tr = $('<tr/>').appendTo(table);
+      groupStyle = event.section;
+      $('<td/>').addClass('date ' + groupStyle).html(event.date).appendTo(tr);
+      $('<td/>').addClass('name').html(event.name).appendTo(tr);
+
+      width += padding;
+      height += 45;
+
+      div.style.width = width + 'px';
+
+      return div;
+    }
+
+    function getEventPosition(event) {
+      return new google.maps.LatLng(
+        event.coordinates.lat, event.coordinates.lng);
+    }
+
+
+    // Used in main.js
+    function showEventsOnMap(events, map) {
+      events.forEach(function (event) {
+
+
+        marker = new MarkerWithLabel({
+          icon: ' ', // No icon
+          position: getEventPosition(event),
+          map: map,
+          labelContent: getEventLabel(event),
+          labelAnchor: new google.maps.Point(labelWidth * 0.25, labelHeight * 0.25),
+        });
+
+        google.maps.event.addListener(
+          marker, 'click', function (e) {
+            win = window.open('event/' + event.urlId, '_blank');
+            win.focus();
+          });
+      });
+    }
+
+  script.
     events = !{eventsSrc}
   script.
     /**
