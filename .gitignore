@@ -8,3 +8,10 @@ gug-web-frontend-ecfab098b81a.json
 /nbproject/private/
 /package-lock.json
 /app/config.js
+/functions/assets/
+/functions/controllers/
+/functions/models/
+/functions/_asyncHelpers.js
+/functions/app.js
+/functions/errorDefinitions.js
+/functions/config.js

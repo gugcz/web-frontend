@@ -21,7 +21,7 @@ module.exports = async function (req, res) {
 
     name: chapter.name,
     section: chapter.section,
-    sectionIconURL: '/public/images/logos/' + chapter.section + '-icon.png',
+    sectionIconURL: '/images/logos/' + chapter.section + '-icon.png',
     description: (chapter.description || '').replaceAll('\n', '<br/>'),
     chapterCover: chapter.cover,
     organizers: organizers,

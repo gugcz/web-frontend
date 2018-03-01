@@ -5,10 +5,7 @@ const NotFound = require('../errorDefinitions').NotFound;
 const GMAP_API_KEY = require('../config').GOOGLE_MAP_API_KEY;
 
 module.exports = async function indexController(req, res) {
-  if (req.originalUrl !== '/' &&
-    req.originalUrl !== '/index.html') {
-    throw new NotFound(req.originalUrl);
-  }
+
 
   const sections = await sectionModel.getSections();
   const organizers = await organizerModel.getOrganizers()

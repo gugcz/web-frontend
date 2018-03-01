@@ -1,3 +1,9 @@
 machine:
   node:
     version: 8.2.0
+deployment:
+  production:
+    branch: master
+    commands:
+      - npm run firebase-build
+      - firebase deploy --token=$FIREBASE_TOKEN --non-interactive

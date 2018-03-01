@@ -11,9 +11,9 @@ const eventController = require('./controllers/event');
 const app = express();
 
 if (process.env.NODE_ENV !== 'production') {
-  app.use('/public/images', express.static(__dirname + '/images'));
-  app.use('/public/scripts', express.static(__dirname + '/scripts'));
-  app.use('/public/fonts', express.static(__dirname + '../node_modules/materialize-css/dist/fonts/'));
+  app.use('/images', express.static(__dirname + '/assets/images'));
+  app.use('/scripts', express.static(__dirname + '/scripts'));
+  app.use('/fonts', express.static(__dirname + '/../node_modules/materialize-css/dist/fonts/'));
 }
 
 app.set('view engine', 'pug');
@@ -60,12 +60,12 @@ app.use('/cs', function(req, res) {
 app.use('/', asyncErrorChecking(indexController));
 
 
-// Enable browserSync in development mode
-
-function listening(port) {
+// Localhost setup
+if (process.env.NODE_ENV === 'development') {
+  function listening(port) {
   let browserSync = require('browser-sync');
   let config = {
-    files: ['public/**/*.{js,css}', 'app/views/**/*.pug'],
+    files: ['public/**/*.{js,css}', 'app/views/!**/!*.pug'],
     logLevel: 'info',
     logPrefix: 'GUG.cz frontend',
     logSnippet: false,
@@ -87,7 +87,10 @@ const server = app.listen(process.env.PORT || 3000, function() {
   if (process.env.NODE_ENV === 'development') {
     listening(port);
   }
-
-
-  console.log('GUG.cz web listening at http://%s:%s', host, port);
 });
+}
+
+
+exports.app = app;
+
+
