@@ -62,15 +62,17 @@
     "node-fetch": "^1.7.1",
     "node-sass": "^4.5.3",
     "node-vibrant": "^3.0.0-alpha.2",
-    "nodemon": "^1.11.0",
+
     "npm-run-all": "^4.0.2",
     "onchange": "^3.2.1",
     "postcss": "^6.0.4",
     "pug": "^2.0.0-rc.2",
     "svgo": "^0.7.2",
     "uglify-js": "^3.0.23"
+
   },
   "devDependencies": {
+    "nodemon": "^1.11.0",
     "babel-cli": "^6.26.0",
     "jasmine": "^2.7.0",
     "babel-plugin-transform-runtime": "^6.23.0",
