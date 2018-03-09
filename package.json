@@ -51,7 +51,8 @@
   "dependencies": {
     "express": "^4.15.3",
     "babel-runtime": "^6.23.0",
-    "node-fetch": "^1.7.1"
+    "node-fetch": "^1.7.1",
+    "pug": "^2.0.0-rc.2"
 
   },
   "devDependencies": {
@@ -79,7 +80,6 @@
     "npm-run-all": "^4.0.2",
     "onchange": "^3.2.1",
     "postcss": "^6.0.4",
-    "pug": "^2.0.0-rc.2",
     "svgo": "^0.7.2",
     "uglify-js": "^3.0.23"
   }
