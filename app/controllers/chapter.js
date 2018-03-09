@@ -3,12 +3,17 @@ const chapterModel = require('../models/chapter');
 const eventModel = require('../models/events');
 
 module.exports = async function (req, res) {
-
   let chapterId = req.params.chapterId;
-  const organizers = await organizerModel.getOrganizersForChapter(chapterId);
-  const chapter = await chapterModel.getChapterInfo(chapterId);
-  const pastEvents = await eventModel.getPastSixEvents(chapterId);
-  const futureEvents = await eventModel.getFutureEvents(chapterId);
+
+  let getOrgs =organizerModel.getOrganizersForChapter(chapterId);
+  let getInfo =chapterModel.getChapterInfo(chapterId);
+  let getPastEvents =eventModel.getPastSixEvents(chapterId);
+  let getFutureEvents =eventModel.getFutureEvents(chapterId);
+
+  const organizers = await getOrgs
+  const chapter = await getInfo
+  const pastEvents = await getPastEvents
+  const futureEvents = await getFutureEvents
 
   String.prototype.replaceAll = function(search, replacement) {
     var target = this;
