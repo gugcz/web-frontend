@@ -5,14 +5,7 @@
     // Add the following rewrites section *within* "hosting"
     "rewrites": [ {
       "source": "**", "function": "app"
-    } ],
-    "headers": [{
-      "source" : "**",
-      "headers" : [{
-        "key" : "Cache-Control",
-        "value" : "max-age=9000" // TODO - What time?
-      }]
-    }]
+    } ]
 
   }
 }
