@@ -49,6 +49,19 @@
   },
   "homepage": "https://github.com/gugcz/web-frontend#readme",
   "dependencies": {
+    "express": "^4.15.3",
+    "babel-runtime": "^6.23.0",
+    "node-fetch": "^1.7.1"
+
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0",
+    "babel-cli": "^6.26.0",
+    "jasmine": "^2.7.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "firebase-tools": "^3.13.1",
+    "babel-preset-env": "^1.6.1",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "@fancyapps/fancybox": "^3.1.20",
     "autoprefixer": "^7.1.1",
     "browser-sync": "^2.18.12",
@@ -69,15 +82,5 @@
     "pug": "^2.0.0-rc.2",
     "svgo": "^0.7.2",
     "uglify-js": "^3.0.23"
-
-  },
-  "devDependencies": {
-    "nodemon": "^1.11.0",
-    "babel-cli": "^6.26.0",
-    "jasmine": "^2.7.0",
-    "babel-plugin-transform-runtime": "^6.23.0",
-    "firebase-tools": "^3.13.1",
-    "babel-preset-env": "^1.6.1",
-    "babel-plugin-transform-object-rest-spread": "^6.26.0"
   }
 }
