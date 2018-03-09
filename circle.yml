@@ -9,4 +9,4 @@ deployment:
       - cd functions && npm install
       - cd ..
       - npm run firebase-build
-      - # TODO - Not work: firebase deploy --token=$FIREBASE_TOKEN --non-interactive
+      - firebase deploy --token=$FIREBASE_TOKEN --non-interactive
