@@ -18,7 +18,7 @@
     "images:other": "mkdir -p public/images/other && cp -v -R app/assets/images/other public/images/",
     "build:images": "npm run images:logos-png && npm run images:favicons-png && npm run images:other",
     "watch:images": "onchange 'app/assets/images/**/*' -- npm run build:images",
-    "fonts:font-awesome": "mkdir -p public/fonts && cp -v -R node_modules/font-awesome/fonts/* public/fonts/",
+    "fonts:font-awesome": "mkdir -p public/fonts && cp -v -R node_modules/font-awesome/fonts/* public/fonts/ && cp -v -R node_modules/materialize-css/dist/fonts/* public/fonts/",
     "build:fonts": "npm run fonts:font-awesome",
     "predevel": "npm install",
     "start": "npm run start:prod",

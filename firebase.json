@@ -1,6 +1,11 @@
 {
   "hosting": {
     "public": "public",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
 
     // Add the following rewrites section *within* "hosting"
     "rewrites": [ {
@@ -13,6 +18,7 @@
         "value" : "max-age=9000" // TODO - What time?
       }]
     }]*/
+
 
   }
 }

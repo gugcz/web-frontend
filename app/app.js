@@ -14,13 +14,13 @@ if (process.env.NODE_ENV !== 'production') {
   app.use('/images', express.static(__dirname + '/assets/images'));
   app.use('/scripts', express.static(__dirname + '/scripts'));
   app.use('/fonts', express.static(__dirname + '/../node_modules/materialize-css/dist/fonts/'));
+  app.use('/public', express.static(__dirname + '/../public'));
 }
 
 app.set('view engine', 'pug');
 app.set('views', [__dirname + '/views/']);
 
 // app.use('/node_modules', express.static(__dirname + '/../node_modules'));
-app.use('/public', express.static(__dirname + '/../public'));
 
 
 app.use('/cs/akce/:eventUrl', function(req, res) {
