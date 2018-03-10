@@ -28,7 +28,9 @@
     "build": "npm-run-all build:*",
     "test": "jasmine",
     "deploy": "gcloud app deploy --project gug-web-public --version 1",
-    "firebase-build": "babel app -d functions/ && npm run build && NODE_ENV=production"
+    "duplicate-public": "mkdir -p public/public && cd public && npm run build",
+    "firebase-build": "babel app -d functions/ && npm run build && NODE_ENV=production",
+    "firebase-deploy": "npm run firebase-build && npm run duplicate-public && firebase deploy --non-interactive"
   },
   "engines": {
     "node": "8"
