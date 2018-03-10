@@ -11,7 +11,7 @@
     "js:eslint": "eslint app/assets/js",
     "js:uglify": "mkdir -p ./public/js && uglifyjs  node_modules/jquery/dist/jquery.min.js node_modules/@fancyapps/fancybox/dist/jquery.fancybox.js node_modules/materialize-css/dist/js/materialize.js app/assets/js/*.js --screw-ie8  -m -c -o public/js/app.min.js",
     "build:js": "npm run js:eslint && npm run js:uglify",
-    "build:views": "mkdir -p functions/views && cp -r app/views/ functions/views/",
+    "build:views": "mkdir -p functions/views && cp -r app/views functions/",
     "watch:js": "onchange 'app/assets/js' -- npm run build:js",
     "images:logos-png": "mkdir -p public/images/logos && cp -R app/assets/images/logos/ public/images/logos/",
     "images:favicons-png": "mkdir -p public/images/favicons && cp -R app/assets/images/favicons/*.png public/images/favicons/",
