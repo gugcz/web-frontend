@@ -13,8 +13,10 @@ const app = express();
 if (process.env.NODE_ENV !== 'production') {
   app.use('/images', express.static(__dirname + '/assets/images'));
   app.use('/scripts', express.static(__dirname + '/scripts'));
-  app.use('/fonts', express.static(__dirname + '/../node_modules/materialize-css/dist/fonts/'));
+  app.use('/fonts', express.static(__dirname + '/../public/fonts/'));
   app.use('/public', express.static(__dirname + '/../public')); // TODO fix double public folder, also in package.json
+  app.use('/js', express.static(__dirname + '/../public/js')); // TODO fix double public folder, also in package.json
+  app.use('/css', express.static(__dirname + '/../public/css')); // TODO fix double public folder, also in package.json
 }
 
 app.set('view engine', 'pug');

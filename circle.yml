@@ -9,5 +9,4 @@ deployment:
       - cd functions && npm install
       - cd ..
       - npm run firebase-build
-      - npm run duplicate-public # TODO
       - firebase deploy --token=$FIREBASE_TOKEN --non-interactive
