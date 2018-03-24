@@ -17,8 +17,16 @@ exports.getChapters = async function (section) {
 
   return fetch(url)
     .then(responseConverterFactory(url))
-};
 
+};
+exports.getHelloWorld = async function () {
+
+  const url = CLOUD_FUNCTIONS_URL + 'helloWorld';
+
+  return fetch(url)
+    .then(responseConverterFactory(url))
+
+};
 
 
 // TODO move to model helpers
