@@ -49,7 +49,7 @@ mixin event-map(eventsSrc, GMAP_API_KEY)
 
         google.maps.event.addListener(
           marker, 'click', function (e) {
-            win = window.open('event/' + event.urlId, '_blank');
+            win = window.open('/event/' + event.urlId, '_blank');
             win.focus();
           });
       });
