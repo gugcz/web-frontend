@@ -7,7 +7,7 @@ module.exports = async function (req, res) {
   var event = await eventModel.getEventInfo(req.params.eventUrl)
   console.timeEnd('Event Page Data');
 
-  console.log(event)
+  //console.log(event)
 
   String.prototype.replaceAll = function(search, replacement) {
     var target = this;
@@ -39,7 +39,7 @@ module.exports = async function (req, res) {
 };
 
 function getDate(date) {
-  console.log(date.toLocaleString())
+  //console.log(date.toLocaleString())
   return date.getDate() + '.' + date.getMonth() + '.' + date.getFullYear()
 }
 

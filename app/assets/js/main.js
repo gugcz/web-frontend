@@ -1,5 +1,6 @@
 $(document).ready(function() {
   $('.parallax').parallax();
+  $('.scrollspy').scrollSpy();
 
 
   if (typeof window.google !== 'undefined') { // Window because of ref error

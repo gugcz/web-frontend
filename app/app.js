@@ -82,7 +82,7 @@ if (process.env.NODE_ENV === 'development') {
 }
 
 const server = app.listen(process.env.PORT || 3000, function() {
-  console.log(process.env.NODE_ENV);
+  //console.log(process.env.NODE_ENV);
   const host = server.address().address;
   const port = server.address().port;
 
