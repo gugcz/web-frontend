@@ -59,8 +59,11 @@ app.use('/cs', function(req, res) {
 });
 
 
-app.use('/', asyncErrorChecking(indexController));
+app.get('/', asyncErrorChecking(indexController));
 
+app.use(function (req, res, next) {
+  res.status(404).render('errors/404');
+});
 
 // Localhost setup
 if (process.env.NODE_ENV === 'development') {
@@ -94,5 +97,3 @@ const server = app.listen(process.env.PORT || 3000, function() {
 
 
 exports.app = app;
-
-
