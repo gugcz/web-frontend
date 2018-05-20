@@ -9,9 +9,10 @@ Pokud se chcete zapojit do vývoje naklonujte si repozitář, spuštěním pří
 ```
 git clone https://github.com/gugcz/web-frontend.git
 ```
-Potom v root složce projektu spusťte
+Potom v adresáři s projektem spusťte instalaci balíčků
 
 ```
+cd web-frontend
 npm install
 ```
 
