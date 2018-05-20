@@ -5,7 +5,7 @@ const NotFound = require('../errorDefinitions').NotFound;
 const GMAP_API_KEY = require('../config').GOOGLE_MAP_API_KEY;
 
 module.exports = async function indexController(req, res) {
-  console.time('Controller')
+  //console.time('Controller')
 
   /*console.time('Sections')
   let getSections =  sectionModel.getSections();
@@ -26,12 +26,12 @@ module.exports = async function indexController(req, res) {
 
   console.timeEnd('Controller')*/
 
-  console.time('Main Page Data')
+  //console.time('Main Page Data')
   let getSections =  sectionModel.getSections();
   let getOrgs =  organizerModel.getOrganizers();
   let getEvents =  eventsModel.getMapOfEvents();
   const [sections, organizers, eventsSrc] = await Promise.all([getSections, getOrgs, getEvents]) // TODO catch
-  console.timeEnd('Main Page Data')
+  //console.timeEnd('Main Page Data')
 
 
   res.render('index', {

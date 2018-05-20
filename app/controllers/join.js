@@ -3,9 +3,9 @@
 
 module.exports = async function(req, res) {
 
-  console.time('HelloWorld');
+  //console.time('HelloWorld');
   const helloWorld = await (require('../models/chapter')).getHelloWorld();
-  console.timeEnd('HelloWorld');
+  //console.timeEnd('HelloWorld');
 
 
   res.render('join', {

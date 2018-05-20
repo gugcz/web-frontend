@@ -5,13 +5,13 @@ const eventModel = require('../models/events');
 module.exports = async function (req, res) {
   let chapterId = req.params.chapterId;
 
-  console.time('Chapter Page Data');
+  //console.time('Chapter Page Data');
   let getOrgs =organizerModel.getOrganizersForChapter(chapterId);
   let getInfo =chapterModel.getChapterInfo(chapterId);
   let getPastEvents =eventModel.getPastSixEvents(chapterId);
   let getFutureEvents =eventModel.getFutureEvents(chapterId);
   const [chapter, organizers, pastEvents, futureEvents] = await Promise.all([getInfo, getOrgs, getPastEvents, getFutureEvents]) // TODO catch
-  console.timeEnd('Chapter Page Data');
+  //console.timeEnd('Chapter Page Data');
 
 
   String.prototype.replaceAll = function(search, replacement) {

@@ -3,9 +3,9 @@ const eventModel = require('../models/events')
 
 module.exports = async function (req, res) {
 
-  console.time('Event Page Data');
+  //console.time('Event Page Data');
   var event = await eventModel.getEventInfo(req.params.eventUrl)
-  console.timeEnd('Event Page Data');
+  //console.timeEnd('Event Page Data');
 
   //console.log(event)
 

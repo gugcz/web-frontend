@@ -1,7 +1,7 @@
 const NotFound = require('../errorDefinitions').NotFound;
 
 module.exports = function (err, req, res, next) {
-  console.error(err);
+  //console.error(err);
 
   if (err instanceof NotFound) {
     res.status(404);
