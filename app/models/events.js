@@ -18,9 +18,10 @@ exports.getPastSixEvents = async function (chapterId) {
     .then(responseConverterFactory(url))
 };
 
-exports.getMapOfEvents = async function (chapterId) {
+exports.getMapOfEvents = async function () {
 
-  const url = CLOUD_FUNCTIONS_URL + 'getMapOfEvents';
+  //const url = CLOUD_FUNCTIONS_URL + 'getMapOfEvents';
+  const url = 'https://gug-web.firebaseio.com/public/mapOfEvents.json';
 
   return fetch(url)
     .then(responseConverterFactory(url))

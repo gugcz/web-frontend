@@ -1,4 +1,3 @@
-const sectionModel = require('../models/sections');
 const organizerModel = require('../models/organizers');
 const eventsModel = require('../models/events');
 const NotFound = require('../errorDefinitions').NotFound;
@@ -27,20 +26,16 @@ module.exports = async function indexController(req, res) {
 
   console.timeEnd('Controller')*/
 
-  //console.time('Main Page Data')
-  //let getSections =  sectionModel.getSections();
-  //let getOrgs =  organizerModel.getOrganizers();
-  //let getEvents =  eventsModel.getMapOfEvents();
-  const [sections, organizers, eventsSrc] = [[], [], []]//await Promise.all([getSections, getOrgs, getEvents]) // TODO catch
+  //console.time('Main Page Data'))
+  let getEvents =  eventsModel.getMapOfEvents();
+  const [eventsSrc] = await Promise.all([getEvents]) // TODO catch
   //console.timeEnd('Main Page Data')
 
 
   res.render('index', {
     title: 'Česká Google User Group',
     favicon: 'gug',
-    message: 'Hello there!',
-    sections,
-    organizers,
+    organizers: [], // TODO
     events: JSON.stringify(eventsSrc),
     GMAP_API_KEY: GMAP_API_KEY
   });
