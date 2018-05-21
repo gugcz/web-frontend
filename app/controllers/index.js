@@ -4,8 +4,7 @@ const NotFound = require('../errorDefinitions').NotFound;
 const GMAP_API_KEY = require('../config').GOOGLE_MAP_API_KEY;
 
 module.exports = async function indexController(req, res) {
-
-  //console.time('Controller')
+//  console.time('Controller')
 
   /*console.time('Sections')
   let getSections =  sectionModel.getSections();
@@ -22,16 +21,13 @@ module.exports = async function indexController(req, res) {
   let getEvents =  eventsModel.getMapOfEvents();
 
   const eventsSrc = await getEvents
-  console.timeEnd('Events')
+  console.timeEnd('Events')*/
 
-  console.timeEnd('Controller')*/
 
   //console.time('Main Page Data'))
+  //console.timeEnd('Main Page Data')
   let getEvents =  eventsModel.getMapOfEvents();
   const [eventsSrc] = await Promise.all([getEvents]) // TODO catch
-  //console.timeEnd('Main Page Data')
-
-
   res.render('index', {
     title: 'Česká Google User Group',
     favicon: 'gug',
@@ -39,5 +35,8 @@ module.exports = async function indexController(req, res) {
     events: JSON.stringify(eventsSrc),
     GMAP_API_KEY: GMAP_API_KEY
   });
+
+
+//  console.timeEnd('Controller')
 };
 

@@ -1,5 +1,6 @@
 const express = require('express');
 const asyncErrorChecking = require('./_asyncHelpers').asyncErrorChecking;
+const compression = require('compression');
 
 
 const indexController = require('./controllers/index');
@@ -9,6 +10,7 @@ const chapterController = require('./controllers/chapter');
 const eventController = require('./controllers/event');
 
 const app = express();
+app.use(compression());
 
 if (process.env.NODE_ENV !== 'production') {
   app.use('/images', express.static(__dirname + '/assets/images'));
