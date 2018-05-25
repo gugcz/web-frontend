@@ -30,36 +30,10 @@ npm start:prod
 
 ### Deploy
 
-#### Setup
-
-Nainstalujte si [Google Cloud SDK](https://cloud.google.com/sdk/#Quick_Start)
-
-Nalogujte se do vašeho Google účtu (musíte mít přístup k webu)
+Repo obsahuje docker kontejner s PM2
 
 ```
-gcloud auth login
-```
+docker build -t gug-web-public .  
 
-Nainstalujte nutné komponenty:
-
-```
-gcloud components update app
-```
-
-Spusťte deploy
-```
-npm run deploy
-```
-
-_příkaz provede nastavení projektu a deploy, tedy nahrazuje následující dva příkazy:_
-
-Nastavení projektu
-
-```
-gcloud config set project gug-web-frontend
-```
-Deploy
-
-```
-gcloud preview app deploy app.yaml --promote
+docker run -p 3000:3000 gug-web-public
 ```
