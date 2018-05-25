@@ -1,0 +1,9 @@
+{
+  "name": "gug-web-public",
+  "script": "app/index.js",
+  "instances": "1",
+  "env": {
+    "NODE_ENV": "production",
+    "PORT": 3000
+  }
+}
