@@ -11,6 +11,7 @@ COPY pm2.json .
 ENV NPM_CONFIG_LOGLEVEL warn
 
 COPY public public/
+COPY node_modules node_modules/
 
 EXPOSE 3000
 
