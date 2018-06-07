@@ -9,8 +9,6 @@ COPY pm2.json .
 
 # Install app dependencies
 ENV NPM_CONFIG_LOGLEVEL warn
-RUN yarn install
-RUN yarn run build
 
 COPY public public/
 
