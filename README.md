@@ -33,6 +33,9 @@ npm start:prod
 Repo obsahuje docker kontejner s PM2
 
 ```
+yarn install
+yarn run build
+
 docker build -t gug-web-public .  
 
 docker run -p 3000:3000 gug-web-public
