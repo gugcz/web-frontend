@@ -89,7 +89,7 @@ block content
       include mixins/organizer.pug
       .container
         h3.header.white-text Organizátoři
-        p.white-text GUG není jen organizace, je hlavně o lidech:
+        p.white-text GUG není jen organizace, je hlavně o lidech...
       .orgs-row.center
         ul.orgs
           each organizer in organizers
@@ -104,9 +104,9 @@ block content
         h3 Partneři
         .col
           .row
-            img(src='/images/logos/logo-google.svg')
+            img(src='/images/logos/logo-google.svg').responsive-img
           .row
-            img(src='/images/logos/logo-dotekomanie.png')
+            img(src='/images/logos/logo-dotekomanie.png').responsive-img
         a.waves-effect.waves-light.btn.btn-large(href='/')
           | Stát se partnerem
         h1

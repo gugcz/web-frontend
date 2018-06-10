@@ -58,6 +58,10 @@ app.use('/cs/:sectionName', function (req, res) {
 app.use('/section/:sectionName', asyncErrorChecking(sectionController));
 app.use('/chapter/:chapterId', asyncErrorChecking(chapterController));
 
+app.use('/admin', function (req, res) {
+  return res.redirect('https://admin.gug.cz');
+});
+
 app.use('/cs', function (req, res) {
   return res.redirect('/');
 });
