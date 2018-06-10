@@ -36,7 +36,10 @@ block content
         .row
           if chapters
             each chapter in chapters
-              if chapter.logo
-                .col
+              .col
+                .chapter-card
                   a(href='../chapter/' + chapter.id).card-panel.waves-effect
-                    img(src=chapter.logo).chapter-list-item
+                    if chapter.logo
+                      img(src=chapter.logo).chapter-list-item
+                    else
+                      p.grey-text.chapter-list-item.no-padding #{chapter.name}
