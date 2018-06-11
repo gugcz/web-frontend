@@ -2,7 +2,8 @@ const fetch = require('node-fetch');
 const NotFound = require('../errorDefinitions').NotFound;
 
 exports.getOrganizers = async function () {
-  const url = 'https://us-central1-gug-web.cloudfunctions.net/getOrganizers?profilePicture=true';
+  const url = 'https://gug-web.firebaseio.com/public/organizers.json';
+  //const url = 'https://us-central1-gug-web.cloudfunctions.net/getOrganizers?profilePicture=true';
   return fetch(url)
     .then(responseConverterFactory(url));
 };

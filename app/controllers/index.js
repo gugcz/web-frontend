@@ -12,7 +12,6 @@ module.exports = async function indexController(req, res) {
   console.timeEnd('Sections')
 
   console.time('Orgs')
-  let getOrgs =  organizerModel.getOrganizers();
   const organizers = await getOrgs
   console.timeEnd('Orgs')
 
@@ -27,11 +26,12 @@ module.exports = async function indexController(req, res) {
   //console.time('Main Page Data'))
   //console.timeEnd('Main Page Data')
   let getEvents =  eventsModel.getMapOfEvents();
-  const [eventsSrc] = await Promise.all([getEvents]) // TODO catch
+  let getOrgs =  organizerModel.getOrganizers();
+  const [eventsSrc, orgs] = await Promise.all([getEvents, getOrgs]) // TODO catch
   res.render('index', {
     title: 'Česká Google User Group',
     favicon: 'gug',
-    organizers: [], // TODO
+    organizers: orgs,
     events: JSON.stringify(eventsSrc),
     GMAP_API_KEY: GMAP_API_KEY
   });
