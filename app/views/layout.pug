@@ -6,6 +6,15 @@ html
     link(type='text/css', rel='stylesheet', href='/css/styles.css', media='screen,projection')
     link(rel='icon', type='image/png', href='/images/favicons/' + favicon + '.png')
     script(src='/js/app.min.js')
+    // Global site tag (gtag.js) - Google Analytics
+    script(async='', src='https://www.googletagmanager.com/gtag/js?id=UA-502070-5')
+    script.
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+      gtag('config', 'UA-502070-5');
     meta(name='viewport', content='width=device-width, initial-scale=1.0')
     title #{title} - GUG.cz
 

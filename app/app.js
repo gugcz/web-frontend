@@ -29,6 +29,18 @@ app.set('views', [__dirname + '/views/']);
 // app.use('/node_modules', express.static(__dirname + '/../node_modules'));
 
 
+function wwwRedirect(req, res, next) {
+  if (req.headers.host.slice(0, 4) === 'www.') {
+    var newHost = req.headers.host.slice(4);
+    return res.redirect(301, req.protocol + '://' + newHost + req.originalUrl);
+  }
+  next();
+};
+
+app.set('trust proxy', true);
+app.use(wwwRedirect);
+
+// http://www.gug.cz/cs/akce/gdg-olomouc-kotlin-vs-java/terminy/1
 app.use('/cs/akce/:eventUrl', function (req, res) {
   return res.redirect('/event/' + req.param('eventUrl'));
 });
