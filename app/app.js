@@ -53,7 +53,10 @@ app.use('/cs/stranky/o-nas', function (req, res) {
 });
 
 app.use('/event/:eventUrl', asyncErrorChecking(eventController));
-app.use('/events', require('./controllers/events'));
+
+// TODO finish or remove
+//app.use('/events', require('./controllers/events'));
+
 app.use('/join', require('./controllers/join'));
 app.use('/history', require('./controllers/history'));
 
