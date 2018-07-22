@@ -1,5 +1,8 @@
 include link.pug
 
+mixin link-to-nowhere()
+  i.white-text.fa.fa-2x.fa-square(aria-hidden='true')
+
 mixin links-row(links)
   ul.row.social-icons-row
     if links
@@ -21,9 +24,12 @@ mixin links-row(links)
         each link in links
           .col.s4
             +link(link.type, link.url)
+      else
+        .col.s3
+          +link-to-nowhere()
     else
       .col.s3
-        i.white-text.fa.fa-2x.fa-square(aria-hidden='true')
+        +link-to-nowhere()
 
 mixin profile-picture(url)
   if url
