@@ -49,15 +49,14 @@ block content
             .card
               .card-content
                 span.card-title Organizuje
-
                 .row
-                  .col
-                    each chapter in chapters
+                  each chapter in chapters
+                    .col.s12
                       a(href='/chapter/' + chapter.urlId).waves-effect
                         if chapter.logo
                           img.responsive-img(src=chapter.logo)
                         else
-                          p=chapter.name
+                          h5.grey-text=chapter.name
             .card
               .card-content
                 span.card-title Organizátoři
