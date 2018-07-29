@@ -154,7 +154,8 @@ block content
       h3.thin Zůstaňte ve spojení
       if email
         i.grey-text.material-icons.medium email
-        h4.grey-text #{email}
+        a(href='mailto:' + email).grey-text
+          h4 #{email}
       h1
       if email && links
         .divider
