@@ -38,8 +38,9 @@ block content
                       a(href=venue.mapUrl).black-text
                         .event-parameter.truncate
                             | #{venue.name}
-                  a(href=regFormLink).btn.right Registrovat
-                  br
+                  if (new Date() < new Date(datesFilter.start))
+                    a(href=regFormLink).btn.right Registrovat
+                    br
             .card
               .card-content.c_event-description
                 span.card-title O akci

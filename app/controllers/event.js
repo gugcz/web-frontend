@@ -24,6 +24,7 @@ module.exports = async function (req, res) {
 
     // Basic info
     dates: event.dates,
+    datesFilter: event.datesFilter,
     name: event.name,
     cover: event.cover,
     subtitle: event.subtitle,
