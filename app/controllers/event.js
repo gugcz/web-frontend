@@ -19,6 +19,8 @@ module.exports = async function (req, res) {
 
     title: event.name,
     favicon: 'gug',
+    urlImage: event.cover,
+    urlDescription: event.subtitle,
 
     // Basic info
     dates: event.dates,

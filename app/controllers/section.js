@@ -13,6 +13,7 @@ module.exports = async function sectionController(req, res) {
   //console.timeEnd('Section Page Data');
 
   res.render('section/detail', {
+
     section,
     title: section.name,
     favicon: req.params.sectionName,

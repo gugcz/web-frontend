@@ -22,6 +22,8 @@ module.exports = async function (req, res) {
   res.render('chapter', {
     title: chapter.name,
     favicon: chapter.section,
+    urlImage: chapter.cover,
+    urlDescription: chapter.description,
 
     name: chapter.name,
     section: chapter.section,
