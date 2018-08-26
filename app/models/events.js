@@ -24,7 +24,7 @@ exports.getMapOfEvents = async function () {
   const url = 'https://gug-web.firebaseio.com/public/mapOfEvents.json';
 
   return fetch(url)
-    .then(responseConverterFactory(url))
+    .then(responseConverterFactoryWithoutNullCheck(url))
 };
 
 exports.getFutureEvents = async function (chapterId) {
@@ -44,6 +44,19 @@ function responseConverterFactory(resourceName) {
         if (!data) {
           throw new NotFound(resourceName);
         }
+
+        return data;
+      })
+  }
+}
+
+
+// TODO move to model helpers
+function responseConverterFactoryWithoutNullCheck(resourceName) {
+  return function responseToJson(response) {
+    return response.json()
+      .then(data => {
+
 
         return data;
       })

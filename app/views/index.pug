@@ -14,7 +14,9 @@ block content
                 h5.header.col.s12
                   | Komunita aktivních lidí pořádající akce nejen o Google technologiích
               .row.center
-                a.waves-effect.waves-light.btn.btn-large(href='/join')
+                //a.waves-effect.waves-light.btn.btn-large(href='#map').margin-10
+                  | Naše akce
+                a.waves-effect.waves-light.btn.btn-large(href='/join').margin-10
                   | Chci se přidat
 
               .parallax
@@ -29,12 +31,15 @@ block content
         .col.s12.left-align
           p.flow-text
             | GUG.cz je společenství skupin lidí se zájmem o Google technologie, nezávislé na Google. Pořádáme setkávání, přednášky, workshopy a další akce. V našich skupinách se potkávají vývojáři, lidé z firem, geeci a uživatelé, a učitelé.
-    .section.c_map-container.scrollspy(id='map')
-      .c_map-container__map-frame
 
-        include mixins/map.pug
+    // Events need to be string json - it's loaded on client side
+    if events !== "null"
+      .section.c_map-container.scrollspy(id='map')
+        .c_map-container__map-frame
 
-        +event-map(events, GMAP_API_KEY)
+          include mixins/map.pug
+
+          +event-map(events, GMAP_API_KEY)
 
     .section
       .container
