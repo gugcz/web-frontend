@@ -18,7 +18,7 @@ module.exports = async function sectionController(req, res) {
     title: section.name,
     favicon: req.params.sectionName,
     chapters,
-    events: JSON.stringify(eventsSrc.filter(event => event.section === req.params.sectionName)),
+    events: JSON.stringify((eventsSrc !== null) ? eventsSrc.filter(event => event.section === req.params.sectionName) : eventsSrc),
     GMAP_API_KEY: GMAP_API_KEY
   });
 };

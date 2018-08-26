@@ -26,10 +26,13 @@ block content
       +geg-content
     else if favicon === 'gxg'
       +gxg-content
-    .section.c_map-container
-      .c_map-container__map-frame
-        include ../mixins/map.pug
-        +event-map(events, GMAP_API_KEY)
+
+    // Events need to be string json - it's loaded on client side
+    if events !== "null"
+      .section.c_map-container
+        .c_map-container__map-frame
+          include ../mixins/map.pug
+          +event-map(events, GMAP_API_KEY)
     .section
       .container
         h3 Skupiny
