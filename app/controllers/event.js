@@ -1,36 +1,6 @@
 // Page used to show detail of single event
 const eventModel = require('../models/events')
-const moment = require('moment')
-
-function getEventDates(event) {
-  if (event.dates.isMultiDay) {
-    return {
-      isMultiDay: true,
-      datesAndTimes: getDate(event.datesFilter.start) + " (" + getTime(event.datesFilter.start) + ") - " + getDate(event.datesFilter.end) + " (" + getTime(event.datesFilter.end) + ")"
-    }
-  }
-  else {
-    return {
-      isMultiDay: false,
-      date: getDate(event.datesFilter.start),
-      time: getTimeForSingleDayEvent(event.datesFilter)
-    }
-  }
-}
-
-function getDate(date) {
-  return moment(date).format('D.M.Y') // date.getMonth() + 1 cause of months are 0...11
-}
-
-function getTime(date) {
-
-  return moment(date).format('HH:mm')
-}
-
-function getTimeForSingleDayEvent(dates) {
-  return getTime(dates.start) + ' - ' + getTime(dates.end)
-}
-
+const dateLib = require('../libs/date')
 module.exports = async function (req, res) {
 
   //console.time('Event Page Data');
@@ -53,7 +23,7 @@ module.exports = async function (req, res) {
     urlDescription: event.subtitle,
 
     // Basic info
-    dates: getEventDates(event),
+    dates: dateLib.getEventDates(event),
     datesFilter: event.datesFilter,
     name: event.name,
     cover: event.cover,
