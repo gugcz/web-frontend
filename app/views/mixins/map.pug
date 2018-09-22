@@ -37,7 +37,9 @@ mixin event-map(eventsSrc, GMAP_API_KEY)
 
     // Used in main.js
     function showEventsOnMap(events, map) {
-      events.forEach(function (event) {
+      var hoverOffset = 80000;
+
+      events.reverse().forEach(function (event) {
 
 
         marker = new MarkerWithLabel({
@@ -47,6 +49,8 @@ mixin event-map(eventsSrc, GMAP_API_KEY)
           labelContent: getEventLabel(event),
           labelAnchor: new google.maps.Point(labelWidth * 0.25, labelHeight * 0.25),
         });
+        marker.setZIndex(hoverOffset); // For label ordering
+        hoverOffset += 2;
 
         google.maps.event.addListener(
           marker, 'click', function (e) {
