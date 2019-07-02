@@ -1,5 +1,4 @@
 # web-frontend
-Frontend nového webu je hostovaný na Google Cloudu a běží na tomto [linku](https://gug-web-public.appspot.com/).
 
 ### Instalace
 Nejprve je potřeba nainstalovat si Node [podle návodu](https://nodejs.org/en/download/package-manager/) nebo případně [Yarn](https://yarnpkg.com/en/).
