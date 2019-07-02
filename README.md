@@ -2,7 +2,7 @@
 Frontend nového webu je hostovaný na Google Cloudu a běží na tomto [linku](https://gug-web-public.appspot.com/).
 
 ### Instalace ###
-Nejprve je potřeba nainstalovat si nodejs [podle návodu](https://nodejs.org/en/download/package-manager/).
+Nejprve je potřeba nainstalovat si Node [podle návodu](https://nodejs.org/en/download/package-manager/) nebo případně [Yarn](https://yarnpkg.com/en/).
 
 Pokud se chcete zapojit do vývoje naklonujte si repozitář, spuštěním příkazu ve složce projektu.
 
@@ -30,7 +30,7 @@ npm start:prod
 
 ### Deploy
 
-Repo obsahuje docker kontejner s PM2
+Repo obsahuje Docker kontejner s PM2
 
 ```
 yarn install
@@ -40,3 +40,5 @@ docker build -t gug-web-public .
 
 docker run -p 3000:3000 gug-web-public
 ```
+
+Je zde nastavené CI/CD (externí pomocí webhook), které nejnovější verzi v `master` nasadí. 

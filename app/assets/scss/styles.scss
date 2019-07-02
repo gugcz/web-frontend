@@ -1,5 +1,6 @@
 // functions for making colors
-@import './../../../node_modules/materialize-css/sass/components/color';
+@import './../../../node_modules/materialize-css/sass/components/_color-variables.scss';
+@import './../../../node_modules/materialize-css/sass/components/_color-classes.scss';
 
 // custom variables to override default materialize variables like colors etc.
 @import './components/variables';
