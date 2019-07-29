@@ -11,8 +11,8 @@ block content
         .container
           h1.header.center.c_parallax-headline #{section.name}
           .row.center
-            a.waves-effect.waves-light.btn.btn-large(href='/')
-              | Chci se přidat
+            a.waves-effect.waves-light.btn.btn-large(href='#events').margin-10
+              | Naše akce
       .parallax
         .c_parallax-overlay
         img(src='/images/other/parallax-gdg.png')
@@ -29,7 +29,7 @@ block content
 
     // Events need to be string json - it's loaded on client side
     if events !== "null"
-      .section.c_map-container
+      .section.c_map-container.scrollspy#events
         .c_map-container__map-frame
           include ../mixins/map.pug
           +event-map(events, GMAP_API_KEY)

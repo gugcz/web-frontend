@@ -14,10 +14,8 @@ block content
                 h5.header.col.s12
                   | Komunita aktivních lidí pořádající akce nejen o Google technologiích
               .row.center
-                //a.waves-effect.waves-light.btn.btn-large(href='#map').margin-10
+                a.waves-effect.waves-light.btn.btn-large(href='#events').margin-10
                   | Naše akce
-                a.waves-effect.waves-light.btn.btn-large(href='/join').margin-10
-                  | Chci se přidat
 
       .parallax
         .c_parallax-overlay
@@ -34,7 +32,7 @@ block content
 
     // Events need to be string json - it's loaded on client side
     if events !== "null"
-      .section.c_map-container.scrollspy(id='map')
+      .section.c_map-container.scrollspy#events
         .c_map-container__map-frame
 
           include mixins/map.pug
