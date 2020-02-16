@@ -104,21 +104,22 @@ block content
         h1
     .section
       .container.center
-        h3 Partneři
-        .col
-          .row
-            a(href="https://google.com")
-              img(src='/images/logos/logo-google.svg').responsive-img
-          .row
-            a(href="https://dotekomanie.cz")
-              img(src='/images/logos/logo-dotekomanie.png').responsive-img
-        .col
-          .row
-            a(href="http://pracovnapraha.cz/")
-              img(src='/images/logos/logo-zenysro.png').responsive-img
-          .row
+        .row
+          h3 Partneři
+          a(href="https://google.com")
+            img(src='/images/logos/logo-google.svg').responsive-img
+      .container
+        .row
+          .col.s12.m4.center-align.partner-logo-img
             a(href="https://auth0.com/?utm_source=oss&utm_medium=gp&utm_campaign=oss")
-              img(src='/images/logos/logo-auth0.png', alt='JWT Auth for open source projects', width='150', height='50').responsive-img
-        a.waves-effect.waves-light.btn.btn-large(href='mailto:filip@gug.cz?subject=Partnerství s GUG.cz')
-          | Stát se partnerem
-        h1
+              img(src='//cdn.auth0.com/oss/badges/a0-badge-light.png', alt='JWT Auth for open source projects', height='70px')
+          .col.s12.m4.center-align.partner-logo-img
+            a(href="https://dotekomanie.cz")
+              img(src='/images/logos/logo-dotekomanie.png', height='70px')
+          .col.s12.m4.center-align.partner-logo-img
+            a(href="http://pracovnapraha.cz/")
+              img(src='/images/logos/logo-zenysro.png', height='70px')
+      .container.center
+        .row
+          a.waves-effect.waves-light.btn.btn-large(href='mailto:filip@gug.cz?subject=Partnerství s GUG.cz')
+            | Stát se partnerem
