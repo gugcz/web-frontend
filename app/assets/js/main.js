@@ -12,4 +12,8 @@ $(document).ready(function() {
 
     showEventsOnMap(events, map);
   }
+
+  new LazyLoad({
+    elements_selector: '.lazy',
+  });
 });
