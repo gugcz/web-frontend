@@ -33,9 +33,9 @@ mixin links-row(links)
 
 mixin profile-picture(url)
   if url
-    img.circle(src=url).profile-picture
+    img.circle.lazy.profile-picture(data-src=url)
   else
-    img.circle(src='/images/other/non_profilepic.png').profile-picture
+    img.circle.profile-picture(src='/images/other/non_profilepic.png')
 
 mixin organizer(name, imageURL, links)
   li.org
