@@ -1,0 +1,5 @@
+Contact: mailto:admins@gug.cz
+Contact: mailto:jiri.bartusek@gug.cz
+Encryption: https://flowcrypt.com/me/jiribartusekgug
+Preferred-Languages: cs, en
+Canonical: https://www.gug.cz/.well-known/security.txt
