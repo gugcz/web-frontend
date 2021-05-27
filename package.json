@@ -52,7 +52,7 @@
     "babel-runtime": "^6.23.0",
     "express": "^4.15.3",
     "moment": "^2.22.2",
-    "node-fetch": "^1.7.1",
+    "node-fetch": "^2.6.1",
     "pug": "^2.0.0-rc.2"
   },
   "devDependencies": {
@@ -72,7 +72,7 @@
     "jasmine": "^2.7.0",
     "jquery": "^3.5.0",
     "materialize-css": "^1.0.0-rc.2",
-    "node-fetch": "^1.7.1",
+    "node-fetch": "^2.6.1",
     "node-sass": "^4.5.3",
     "node-vibrant": "^3.0.0-alpha.2",
     "nodemon": "^1.11.0",
