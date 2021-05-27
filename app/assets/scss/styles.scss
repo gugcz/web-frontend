@@ -243,4 +243,14 @@ main {
 .partner-logo-img {
   margin-top: 0.5em;
   margin-bottom: 0.5em;
+  max-height: 160px;
+  overflow: hidden;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+.responsive-logo {
+  width: 100%;
+  height: auto;
 }
